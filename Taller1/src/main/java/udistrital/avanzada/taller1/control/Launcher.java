@@ -1,4 +1,4 @@
-package com.udistrital.avanzada.taller1.control;
+package udistrital.avanzada.taller1.control;
 
 
 public class Launcher {

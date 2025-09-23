@@ -1,4 +1,4 @@
-package com.udistrital.avanzada.taller1.vista;
+package udistrital.avanzada.taller1.vista;
 
 
 import java.awt.event.WindowAdapter;
