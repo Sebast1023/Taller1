@@ -1,6 +1,6 @@
-package com.udistrital.taller1.control;
+package com.udistrital.avanzada.taller1.control;
 
-import com.udistrital.taller1.vista.Ventana;
+import com.udistrital.avanzada.taller1.vista.Ventana;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

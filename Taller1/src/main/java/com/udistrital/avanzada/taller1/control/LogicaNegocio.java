@@ -1,4 +1,4 @@
-package com.udistrital.taller1.control;
+package com.udistrital.avanzada.taller1.control;
 
 public class LogicaNegocio {
     
