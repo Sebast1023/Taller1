@@ -1,10 +1,11 @@
 package udistrital.avanzada.taller1.modelo;
 /**
- *
  * @author mauricio
+ * 23/9/2025
+ * la clase Persona es la superclase de las clases Usuario, Proveedor y
+ * Administrador para la sustitucion de Liskov
  */
 public abstract class Persona {
-    private int id;
     protected String nombre;    
     protected String apellido;
     protected String cedula;
@@ -12,12 +13,11 @@ public abstract class Persona {
     protected String correo;
     protected String membresia;
     protected String contraseña;
-
+    //contructor
     public Persona() {
     }
-
-    public Persona(int id, String nombre, String apellido, String cedula, String numero, String correo, String membresia, String contraseña) {
-        this.id = id;
+    //contructor
+    public Persona(String nombre, String apellido, String cedula, String numero, String correo, String membresia, String contraseña) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.cedula = cedula;
@@ -26,15 +26,7 @@ public abstract class Persona {
         this.membresia = membresia;
         this.contraseña = contraseña;
     }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
+    // getters y setters
     public String getNombre() {
         return nombre;
     }
