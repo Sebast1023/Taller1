@@ -1,13 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package udistrital.avanzada.taller1.modelo;
 
 /**
- *
- * @author mauri
+ * @author mauricio
+ * 23/9/2025
  */
-public class ProveedorInsumos {
-    
+public class ProveedorInsumos extends Proveedor {
+
+    public ProveedorInsumos() {
+    }
+
+    public ProveedorInsumos(String nombre, String apellido, String cedula, String numero, String correo, String membresia, String contraseña) {
+        super(nombre, apellido, cedula, numero, correo, membresia, contraseña);
+    }    
 }
