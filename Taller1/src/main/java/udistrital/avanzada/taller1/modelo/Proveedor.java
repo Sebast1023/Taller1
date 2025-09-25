@@ -3,14 +3,17 @@ package udistrital.avanzada.taller1.modelo;
 /**
  * @author mauricio
  * 23/9/2025
+ * Super clase de Proveedor tipo insumo y tipo servicio
  */
-public class Proveedor extends Persona{
-
-    public Proveedor() {
-    }
-
-    public Proveedor(String nombre, String apellido, String cedula, String numero, String correo, String membresia, String contraseña) {
-        super(nombre, apellido, cedula, numero, correo, membresia, contraseña);
-    }
+public abstract class Proveedor extends Persona{
+    // nombre de la empresa
+    protected String empresa;
+    // numero de identificacion tributaria
+    protected String nit;
     
+    public Proveedor(String nombre, String apellido, String cedula, String numero, String correo, String membresia, String contraseña, String empresa, String nit) {
+        super(nombre, apellido, cedula, numero, correo, membresia, contraseña);
+        this.empresa = empresa;
+        this.nit = nit;
+    }
 }
