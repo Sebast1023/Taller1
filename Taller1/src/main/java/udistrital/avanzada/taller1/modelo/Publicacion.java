@@ -9,17 +9,14 @@ package udistrital.avanzada.taller1.modelo;
 public class Publicacion {
     String titulo;
     String Contenido;
-    int likes;
     Persona creador;
 
     public Publicacion() {
-        this.likes = 0;
     }
     
     public Publicacion(String descripocion, String titulo, Persona creador) {
         this.titulo = titulo;
         this.Contenido = descripocion;
-        this.likes = 0;
         this.creador = creador;
     }
 
@@ -37,14 +34,6 @@ public class Publicacion {
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
-    }
-
-    public int getLikes() {
-        return likes;
-    }
-
-    public void setLikes(int likes) {
-        this.likes = likes;
     }
 
     public Persona getCreador() {
