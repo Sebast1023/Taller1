@@ -3,13 +3,26 @@ package udistrital.avanzada.taller1.modelo;
 import java.util.ArrayList;
 
 /**
- * @author mauricio 23/9/2025
+ * @author mauricio 
+ * 23/9/2025
+ * Clase Proveedor tipo Servicios que solo maneja servicios
  */
 public class ProveedorServicios extends Proveedor {
 
     private ArrayList<Servicio> servicios;
-
-    public ProveedorServicios(String nombre, String apellido, String cedula, String numero, String correo, String membresia, String contraseña, String empresa, String nit) {
+    /**
+     * Constructor ProveedorServicios con los siguientes parametros
+     * @param nombre
+     * @param apellido
+     * @param cedula
+     * @param numero
+     * @param correo 
+     * @param membresia de la asociacion
+     * @param contraseña
+     * @param empresa nombre de la empresa
+     * @param nit numero de identificacion tributaria
+     */
+    public ProveedorServicios(String nombre, String apellido, String cedula, String numero, String correo, String membresia, String contraseña, String empresa, int nit) {
         super(nombre, apellido, cedula, numero, correo, membresia, contraseña, empresa, nit);
         //Se instancia el grupo que almacenara los objetos
         this.servicios = new ArrayList<Servicio>();

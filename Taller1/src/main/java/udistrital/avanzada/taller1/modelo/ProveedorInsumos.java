@@ -5,12 +5,24 @@ import java.util.ArrayList;
 /**
  * @author mauricio 
  * 23/9/2025
+ * Clase Proveedor tipo Insumos que solo maneja productos
  */
 public class ProveedorInsumos extends Proveedor {
 
     private ArrayList<Insumo> insumos;
-
-    public ProveedorInsumos(String nombre, String apellido, String cedula, String numero, String correo, String membresia, String contraseña, String empresa, String nit) {
+    /**
+     * Constructor ProveedorInsumos con los siguientes parametros
+     * @param nombre
+     * @param apellido
+     * @param cedula
+     * @param numero
+     * @param correo 
+     * @param membresia de la asociacion
+     * @param contraseña
+     * @param empresa
+     * @param nit
+     */
+    public ProveedorInsumos(String nombre, String apellido, String cedula, String numero, String correo, String membresia, String contraseña, String empresa, int nit) {
         super(nombre, apellido, cedula, numero, correo, membresia, contraseña, empresa, nit);
         //Se instancia el grupo que almacenara los objetos
         this.insumos = new ArrayList<Insumo>();

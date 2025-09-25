@@ -9,9 +9,9 @@ public abstract class Proveedor extends Persona{
     // nombre de la empresa
     protected String empresa;
     // numero de identificacion tributaria
-    protected String nit;
+    protected int nit;
     
-    public Proveedor(String nombre, String apellido, String cedula, String numero, String correo, String membresia, String contraseña, String empresa, String nit) {
+    public Proveedor(String nombre, String apellido, String cedula, String numero, String correo, String membresia, String contraseña, String empresa, int nit) {
         super(nombre, apellido, cedula, numero, correo, membresia, contraseña);
         this.empresa = empresa;
         this.nit = nit;
