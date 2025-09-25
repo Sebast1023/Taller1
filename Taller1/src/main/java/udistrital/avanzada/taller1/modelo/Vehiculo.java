@@ -7,9 +7,11 @@ public class Vehiculo {
     private int potencia;
     private int carga;
     private String color;
+    // placa sera el atributo unico nadie más debe tenerlo
     private String placa;
+    private Usuario usuario;
 
-    public Vehiculo(String marca, String modelo, int ano, int potencia, int carga, String color, String placa) {
+    public Vehiculo(String marca, String modelo, int ano, int potencia, int carga, String color, String placa, Usuario usuario) {
         this.marca = marca;
         this.modelo = modelo;
         this.ano = ano;
@@ -17,6 +19,7 @@ public class Vehiculo {
         this.carga = carga;
         this.color = color;
         this.placa = placa;
+        this.usuario = usuario;
     }
 
     public String getMarca() {
@@ -74,4 +77,9 @@ public class Vehiculo {
     public void setPlaca(String placa) {
         this.placa = placa;
     }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+    
 }
