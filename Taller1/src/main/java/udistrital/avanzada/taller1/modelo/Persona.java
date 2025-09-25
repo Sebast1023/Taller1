@@ -16,7 +16,16 @@ public abstract class Persona {
     //contructor
     public Persona() {
     }
-    //contructor
+    /**
+     * Constructor Persona con los siguientes parametros
+     * @param nombre
+     * @param apellido
+     * @param cedula
+     * @param numero
+     * @param correo 
+     * @param membresia de la asociacion
+     * @param contraseña
+     */
     public Persona(String nombre, String apellido, String cedula, String numero, String correo, String membresia, String contraseña) {
         this.nombre = nombre;
         this.apellido = apellido;
