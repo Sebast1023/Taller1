@@ -9,8 +9,8 @@ public class ProveedorServicios extends Proveedor {
 
     private ArrayList<Servicio> servicios;
 
-    public ProveedorServicios(String nombre, String apellido, String cedula, String numero, String correo, String membresia, String contraseña) {
-        super(nombre, apellido, cedula, numero, correo, membresia, contraseña);
+    public ProveedorServicios(String nombre, String apellido, String cedula, String numero, String correo, String membresia, String contraseña, String empresa, String nit) {
+        super(nombre, apellido, cedula, numero, correo, membresia, contraseña, empresa, nit);
         //Se instancia el grupo que almacenara los objetos
         this.servicios = new ArrayList<Servicio>();
     }
