@@ -13,7 +13,7 @@ public class ControlVentana implements ActionListener {
     public ControlVentana(LogicaNegocio logica) {
         this.logica = logica;
         ventana = new Ventana("ROLA PET");
-        ventana.setSize(700, 200);
+        ventana.setSize(400, 350);
         ventana.setResizable(true);
         ventana.setLocationRelativeTo(null);
         ventana.panelLogin.bMostrarContrasena.addActionListener(this);
