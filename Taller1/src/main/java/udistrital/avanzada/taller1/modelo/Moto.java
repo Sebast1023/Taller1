@@ -2,8 +2,8 @@ package udistrital.avanzada.taller1.modelo;
 
 public class Moto extends Vehiculo {
 
-    public Moto(String marca, String modelo, int ano, int potencia, int carga, String color, String placa) {
-        super(marca, modelo, ano, potencia, carga, color, placa);
+    public Moto(String marca, String modelo, int ano, int potencia, int carga, String color, String placa, Usuario usuario) {
+        super(marca, modelo, ano, potencia, carga, color, placa, usuario);
     }
 
     @Override

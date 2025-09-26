@@ -3,29 +3,40 @@ package udistrital.avanzada.taller1.modelo;
 /**
  * @author mauricio
  * 23/9/2025
- * La clase es para que tanto Administrador como Proveedor publiquen post de eventos
- * o promociones
+ * La clase es para que tanto Administrador como Proveedor publiquen post 
+ * de eventos, promociones u otros
  */
 public class Publicacion {
-    String titulo;
-    String Contenido;
-    Persona creador;
-
-    public Publicacion() {
-    }
-    
-    public Publicacion(String descripocion, String titulo, Persona creador) {
+    private String titulo;
+    private String contenido;
+    private String descripcion;
+    private Persona creador;
+    private String imagen;
+    private int id;   
+    /**
+     * Constructor con los siguientes parametros
+     * @param titulo
+     * @param descripcion
+     * @param contenido     
+     * @param creador
+     * @param id 
+     * @param imagen
+     */
+    public Publicacion(String titulo, String descripcion, String contenido, Persona creador, int id, String imagen) {
         this.titulo = titulo;
-        this.Contenido = descripocion;
+        this.descripcion = descripcion;
+        this.contenido = contenido;
         this.creador = creador;
+        this.id = id;
+        this.imagen = imagen;
     }
 
     public String getContenido() {
-        return Contenido;
+        return contenido;
     }
 
     public void setContenido(String Contenido) {
-        this.Contenido = Contenido;
+        this.contenido = Contenido;
     }
 
     public String getTitulo() {
@@ -40,8 +51,15 @@ public class Publicacion {
         return creador;
     }
 
-    public void setCreador(Persona creador) {
-        this.creador = creador;
+    public int getId() {
+        return id;
     }
-    
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
 }
