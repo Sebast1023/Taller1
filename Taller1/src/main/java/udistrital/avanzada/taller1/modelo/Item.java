@@ -10,7 +10,7 @@ import java.util.Date;
  * @author mauricio
  * 24/09/2025
  * Clase Item es superclase para Producto y Servicio que pueden
- * publicar los proveedores
+ * crear los proveedores
  */
 public abstract class Item {
     protected String nombre;
@@ -18,17 +18,34 @@ public abstract class Item {
     protected double precio;
     protected Date fechaCreacion;
     protected Date fechaActualizacion;    
-    //Nos dice si la Persona tipo Usuario puede ver el Servicio
-    protected boolean visibidad;    
-    //TODO prop imagen
-
-    public Item(String nombre, String descripcion, double precio, Date fechaCreacion, boolean visibidad) {
+    //Nos dice si puede ser visible a otras personas tipo Usuario o Proveedor
+    //Administrador puede ver todo
+    protected boolean visibidad; 
+    //El Proveedor que creo el Item
+    private Proveedor proveedor;
+    private int id;
+    // URL de la imagen en este caso seria una ruta local
+    private String imagen;
+    /**
+     * Constructor con los siguientes parametros
+     * @param nombre
+     * @param descripcion
+     * @param precio
+     * @param fechaCreacion
+     * @param visibidad
+     * @param proveedor
+     * @param id 
+     * @param imagen
+     */
+    public Item(String nombre, String descripcion, double precio, Date fechaCreacion, boolean visibidad, Proveedor proveedor, int id, String imagen) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
         this.fechaCreacion = fechaCreacion;
         this.fechaActualizacion = fechaCreacion;
         this.visibidad = visibidad;
+        this.proveedor = proveedor;
+        this.id = id;
     }
 
     public String getNombre() {
@@ -77,8 +94,13 @@ public abstract class Item {
 
     public void setVisibidad(boolean visibidad) {
         this.visibidad = visibidad;
+    }        
+
+    public Proveedor getProveedor() {
+        return proveedor;
     }
-    
-    
-    
+
+    public int getId() {
+        return id;
+    }
 }

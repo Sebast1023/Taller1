@@ -9,12 +9,25 @@ import java.util.Date;
 /**
  * @author mauricio
  * 24/9/2025
- * Clase de servicio
+ * Clase de servicio para los Proveedores tipo servicio
  */
 public class Servicio extends Item{    
+    //duracion aproximada en minutos del servicio
     private int duracion;
-    public Servicio(String nombre, String descripcion, double precio, Date fechaCreacion, boolean visibidad, int duracion) {
-        super(nombre, descripcion, precio, fechaCreacion, visibidad);
+    /**
+     * Constructor con los siguientes parametros
+     * @param nombre
+     * @param descripcion
+     * @param precio
+     * @param fechaCreacion
+     * @param visibidad
+     * @param duracion duracion aproximada en minutos del servicio
+     * @param proveedor
+     * @param id
+     * @param imagen 
+     */
+    public Servicio(String nombre, String descripcion, double precio, Date fechaCreacion, boolean visibidad, int duracion, Proveedor proveedor, int id, String imagen) {
+        super(nombre, descripcion, precio, fechaCreacion, visibidad, proveedor, id, imagen);
         this.duracion = duracion;
     }
 
