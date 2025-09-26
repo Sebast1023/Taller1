@@ -5,7 +5,9 @@ import java.util.ArrayList;
 /**
  * @author mauricio
  * 23/9/2025
- * Super clase de Proveedor tipo insumo y tipo servicio
+ * Super clase de Proveedores tipo insumo y tipo servicio
+ * Implementa la interfaz publicador para que los proveedore manejen
+ * publicaciones
  */
 public abstract class Proveedor extends Persona implements Publicador{
     // nombre de la empresa
@@ -18,10 +20,12 @@ public abstract class Proveedor extends Persona implements Publicador{
         super(nombre, apellido, cedula, numero, correo, membresia, contraseña);
         this.empresa = empresa;
         this.nit = nit;
+        // se instancia el grupo donde se guardan las publicaciones
         this.posts = new ArrayList<Publicacion>();
     }
     /**
-    * método para añadir publiccion a la lista de post
+    * método implementado la de la interfaz Publicador
+    * para añadir publiccion a la lista de post
     * @param post
     */
     @Override
@@ -29,7 +33,8 @@ public abstract class Proveedor extends Persona implements Publicador{
         this.posts.add(post);
     }
     /**
-     * método para eliminar publicacion de la lista de post
+     * método implementado la de la interfaz Publicador
+     * para eliminar publicacion de la lista de post
      * @param post 
      */
     @Override
@@ -37,7 +42,8 @@ public abstract class Proveedor extends Persona implements Publicador{
         this.posts.remove(post);
     }
     /**
-     * método que retorna las publicaciones del proveedor
+     * método implementado la de la interfaz Publicador
+     * que retorna las publicaciones del proveedor
      * @return  lista de objetos tipo Publicacion
      */
     @Override

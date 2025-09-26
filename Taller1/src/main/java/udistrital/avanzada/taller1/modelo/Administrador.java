@@ -4,6 +4,8 @@ import java.util.ArrayList;
  * @author mauricio
  * 23/9/2025
  * Clase que administra todo sobre los usuarios
+ * Implementa la interfaz publicador para manejar
+ * publicaciones
  */
 public class Administrador extends Persona implements Publicador {
     private ArrayList<Publicacion> posts;
@@ -27,7 +29,8 @@ public class Administrador extends Persona implements Publicador {
         this.posts = new ArrayList<Publicacion>();
     }
     /**
-    * método para añadir publiccion a la lista de post
+    * método implementado la de la interfaz Publicador
+    * para añadir publiccion a la lista de post
     * @param post
     */
     @Override
@@ -35,7 +38,8 @@ public class Administrador extends Persona implements Publicador {
         this.posts.add(post);
     }
     /**
-     * método para eliminar publicacion de la lista de post
+     * método implementado la de la interfaz Publicador
+     * para eliminar publicacion de la lista de post
      * @param post 
      */
     @Override
@@ -43,7 +47,8 @@ public class Administrador extends Persona implements Publicador {
         this.posts.remove(post);
     }
     /**
-     * método que retorna las publicaciones del administrador
+     * método implementado la de la interfaz Publicador
+     * que retorna las publicaciones del administrador
      * @return  lista de objetos tipo Publicacion
      */
     @Override
