@@ -22,6 +22,9 @@ public class ControlVentana implements ActionListener {
         ventana.panelLogin.bIniciarSesion.addActionListener(this);
         ventana.panelLogin.bRegistrarse.addActionListener(this);
         ventana.panelRegistro.bRegistrar.addActionListener(this);
+        ventana.panelVehiculo.bMoto.addActionListener(this);
+        ventana.panelVehiculo.bScooter.addActionListener(this);
+        ventana.panelMenu.bSalir.addActionListener(this);
         ventana.setVisible(true);
     }
 
@@ -35,8 +38,11 @@ public class ControlVentana implements ActionListener {
         ventana.panelRegistro.cContrasena.setText("");
         ventana.panelLogin.cContrasena.setText("");
         ventana.panelLogin.cUsuario.setText("");
+        ventana.panelVehiculo.cAno.setText("");
+        ventana.panelVehiculo.cColor.setText("");
+        ventana.panelVehiculo.cMarca.setText("");
+        ventana.panelVehiculo.cPotencia.setText("");
     }
-
     @Override
     public void actionPerformed(ActionEvent e) {
         if ("mostrarContrasena".equals(e.getActionCommand())) {
@@ -64,23 +70,35 @@ public class ControlVentana implements ActionListener {
                 String membresia = ventana.panelRegistro.cMembresia.getText();
                 String contraseña = ventana.panelRegistro.cContrasena.getText();
                 logica.crearUsuario(nombre, apellido, cedula, numero, correo, membresia, contraseña);
-                ventana.mostrarPanel("LOGIN_PANEL");
                 limpiarCampos();
+                ventana.mostrarPanel("LOGIN_PANEL");
                 break;
             case "Iniciar Sesion":
                 String cedula1 = ventana.panelLogin.cUsuario.getText();
                 String contrasena = new String(ventana.panelLogin.cContrasena.getPassword());
-
                 Persona p = logica.login(cedula1, contrasena);
-                
                 if (p != null) {
                     ventana.mostrarPanel("VEHICULO_PANEL");
-                    limpiarCampos();
+                    break;
                 }
                 else{
                     JOptionPane.showMessageDialog(ventana, "Usuario o contraseña incorrectos");
+                    break;
                 }
+            case "Scooter":
+                ventana.mostrarPanel("MENU_PANEL");
+                limpiarCampos();
+                break;
+            case "Moto":
+                ventana.mostrarPanel("MENU_PANEL");
+                limpiarCampos();
+                break;
+            case "Salir":
+                ventana.mostrarPanel("LOGIN_PANEL");
+                break;
         }
     }
+    
+    
 
 }
