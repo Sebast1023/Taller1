@@ -33,7 +33,7 @@ public class ProveedorServicios extends Proveedor {
      *
      * @param servicio servicio a agregar
      */
-    public void addInsumo(Servicio servicio) {
+    public void addServicio(Servicio servicio) {
         servicios.add(servicio);
     }
 
@@ -51,7 +51,7 @@ public class ProveedorServicios extends Proveedor {
      *
      * @return Lista de de los servicios que tiene el proveedor
      */
-    public ArrayList<Servicio> getInsumos() {
+    public ArrayList<Servicio> getServicios() {
         return servicios;
     }
 
