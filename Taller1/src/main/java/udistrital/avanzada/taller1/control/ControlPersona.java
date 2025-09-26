@@ -6,12 +6,16 @@ package udistrital.avanzada.taller1.control;
 
 import java.util.ArrayList;
 import udistrital.avanzada.taller1.modelo.Administrador;
+import udistrital.avanzada.taller1.modelo.Insumo;
+import udistrital.avanzada.taller1.modelo.Item;
 import udistrital.avanzada.taller1.modelo.Persona;
 import udistrital.avanzada.taller1.modelo.Proveedor;
 import udistrital.avanzada.taller1.modelo.ProveedorInsumos;
 import udistrital.avanzada.taller1.modelo.ProveedorServicios;
 import udistrital.avanzada.taller1.modelo.Publicacion;
+import udistrital.avanzada.taller1.modelo.Servicio;
 import udistrital.avanzada.taller1.modelo.Usuario;
+import udistrital.avanzada.taller1.modelo.Vehiculo;
 
 /**
  *
@@ -27,6 +31,16 @@ public class ControlPersona {
     }
     public void personaExiste(){
     
+    }
+    public Persona getPersona(String cedula){
+        Persona aux = null;
+        for (Persona persona : personas) {
+            if(persona.getCedula().equalsIgnoreCase(cedula)){
+                aux = persona;
+                break;
+            }
+        }
+        return aux;
     }
     /**
      * metodo para crear una Persona tipo Usuario
@@ -125,4 +139,62 @@ public class ControlPersona {
         }
     }
     
+    public void agregarItem(Item item, Persona creador){ 
+        //si no es proveedor salir de la funcion
+        if (!(creador instanceof Proveedor)){return;}
+        // Confirmamos el tipo del item y proveedor sean de apellido Servicio
+        if (item instanceof Servicio && creador instanceof ProveedorServicios){            
+            // pasada la confirmacion hacemos casting y agregamos el item
+            // a la lista de servicios del ProveedorServicios
+            ((ProveedorServicios) creador).addServicio((Servicio) item);
+        }
+        // Si no confirmamos el tipo del item y proveedor sean de apellido Insumo
+        else if (item instanceof Insumo && creador instanceof ProveedorServicios){
+            // pasada la confirmacion hacemos casting y agregamos el item
+            // a la lista de insumos del ProveedorInsumos
+            ((ProveedorInsumos) creador).addInsumo((Insumo) item);
+        }        
+    }
+    
+    public void eliminarItem(Item item, Persona creador){ 
+        //si no es proveedor salir de la funcion
+        if (!(creador instanceof Proveedor)){return;}
+        // Confirmamos el tipo del item y proveedor sean de apellido Servicio
+        if (item instanceof Servicio && creador instanceof ProveedorServicios){            
+            // pasada la confirmacion hacemos casting y agregamos el item
+            // a la lista de servicios del ProveedorServicios
+            ((ProveedorServicios) creador).addServicio((Servicio) item);
+        }
+        else if (item instanceof Insumo && creador instanceof ProveedorServicios){
+            // pasada la confirmacion hacemos casting y agregamos el item
+            // a la lista de insumos del ProveedorInsumos
+            ((ProveedorInsumos) creador).addInsumo((Insumo) item);
+        }        
+    }    
+    public void agregarVehiculo(Vehiculo vehiculo, Persona persona){ 
+        //si no es proveedor salir de la funcion
+        if (!(persona instanceof Usuario)){return;}
+        // Confirmamos el tipo del item y proveedor sean de apellido Servicio
+        ((Usuario)persona).addVehiculo(vehiculo);                
+    }
+    public void eliminarVehiculo(Vehiculo vehiculo, Persona persona){ 
+        //si no es proveedor salir de la funcion
+        if (!(persona instanceof Usuario)){return;}
+        // Confirmamos el tipo del item y proveedor sean de apellido Servicio
+        ((Usuario)persona).delVehiculo(vehiculo);                
+    }
+    public void agregarAmigo(Persona amigo, Persona persona){ 
+        //si no es proveedor salir de la funcion
+        if (!(persona instanceof Usuario)){return;}
+        if (!(amigo instanceof Usuario)){return;}
+        // Confirmamos el tipo del item y proveedor sean de apellido Servicio
+        ((Usuario)persona).addAmigo((Usuario)amigo);                
+    }
+    public void eliminarAmigo(Vehiculo vehiculo, Persona persona){ 
+        //si no es proveedor salir de la funcion
+        if (!(persona instanceof Usuario)){return;}
+        // Confirmamos el tipo del item y proveedor sean de apellido Servicio
+        ((Usuario)persona).delVehiculo(vehiculo);                
+    }
+            
 }

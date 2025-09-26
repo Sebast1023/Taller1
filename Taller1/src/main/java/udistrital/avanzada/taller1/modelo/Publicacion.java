@@ -62,4 +62,13 @@ public class Publicacion {
     public void setImagen(String imagen) {
         this.imagen = imagen;
     }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+        
 }

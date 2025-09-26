@@ -46,6 +46,9 @@ public class Administrador extends Persona implements Publicador {
     public void delPost(Publicacion post) {
         this.posts.remove(post);
     }
+    public void delPost(Publicacion post, boolean bandera) {
+        
+    }
     /**
      * método implementado la de la interfaz Publicador
      * que retorna las publicaciones del administrador
