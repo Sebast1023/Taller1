@@ -14,7 +14,7 @@ public class ControlVentana implements ActionListener {
         this.logica = logica;
         ventana = new Ventana("ROLA PET");
         ventana.setSize(400, 350);
-        ventana.setResizable(true);
+        ventana.setResizable(false);
         ventana.setLocationRelativeTo(null);
         ventana.panelLogin.bMostrarContrasena.addActionListener(this);
         ventana.panelLogin.bIniciarSesion.addActionListener(this);
@@ -44,6 +44,8 @@ public class ControlVentana implements ActionListener {
             case "Registrar":
                 ventana.mostrarPanel("LOGIN_PANEL");
                 break;
+            case "Iniciar Sesion":
+                ventana.mostrarPanel("VEHICULO_PANEL");
         }
 
     }

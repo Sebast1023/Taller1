@@ -12,6 +12,7 @@ public class Ventana extends JFrame {
     private CardLayout cardLayout;
     public PanelLogin panelLogin;
     public PanelRegistro panelRegistro;
+    public PanelVehiculo panelVehiculo;
     
     public Ventana(String title) {
         super(title);
@@ -24,10 +25,12 @@ public class Ventana extends JFrame {
         
         panelLogin = new PanelLogin();
         panelRegistro = new PanelRegistro();
+        panelVehiculo = new PanelVehiculo();
         
         panelPrincipal.add(panelLogin, "LOGIN_PANEL");
         panelPrincipal.add(panelRegistro, "REGISTRO_PANEL");
-        
+        panelPrincipal.add(panelVehiculo, "VEHICULO_PANEL");
+                
         this.add(panelPrincipal);
         
         this.addWindowListener(new WindowAdapter() {

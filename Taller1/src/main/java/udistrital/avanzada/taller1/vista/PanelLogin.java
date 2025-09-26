@@ -101,7 +101,7 @@ public class PanelLogin extends javax.swing.JPanel {
                 .addGap(6, 6, 6)
                 .addComponent(bIniciarSesion)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
                     .addComponent(bRegistrarse))
                 .addContainerGap())
