@@ -48,7 +48,7 @@ public class PanelVehiculo extends javax.swing.JPanel {
 
         lMarca.setText("Marca:");
 
-        lAno.setText("Ano:");
+        lAno.setText("Año:");
 
         lPotencia.setText("Potencia:");
 
@@ -109,7 +109,7 @@ public class PanelVehiculo extends javax.swing.JPanel {
                     .addComponent(lColor)
                     .addComponent(cColor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(bMoto, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bScooter, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18))

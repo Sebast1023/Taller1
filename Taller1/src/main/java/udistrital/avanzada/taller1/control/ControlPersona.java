@@ -25,6 +25,14 @@ public class ControlPersona {
         // se instancia el grupo que tendra las personas
         this.personas = new ArrayList<Persona>();        
     }
+    public Persona validarIniciodeSesion(String cedula, String contrasena){
+        for (Persona p : personas){
+            if (p.getCedula().equals(cedula)&&p.getContraseña().equals(contrasena)){
+                return p;
+            }
+        }
+        return null;
+    }
     public void personaExiste(){
     
     }
@@ -124,5 +132,4 @@ public class ControlPersona {
             ((Proveedor) publicador).delPost(publicacion);
         }
     }
-    
 }

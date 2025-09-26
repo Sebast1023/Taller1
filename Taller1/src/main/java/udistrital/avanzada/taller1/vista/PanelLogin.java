@@ -36,7 +36,7 @@ public class PanelLogin extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLogo = new javax.swing.JLabel();
 
-        lUsuario.setText("Usuario");
+        lUsuario.setText("Usuario(Cedula)");
 
         lContrasena.setText("Contraseña");
 

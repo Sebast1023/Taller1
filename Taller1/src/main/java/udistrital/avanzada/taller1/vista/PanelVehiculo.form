@@ -81,7 +81,7 @@
                   <Component id="cColor" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="9" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="bMoto" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
                   <Component id="bScooter" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
               </Group>
@@ -134,7 +134,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lAno">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Ano:"/>
+        <Property name="text" type="java.lang.String" value="A&#xf1;o:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="cAno">

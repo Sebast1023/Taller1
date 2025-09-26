@@ -3,6 +3,8 @@ package udistrital.avanzada.taller1.control;
 import udistrital.avanzada.taller1.vista.Ventana;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+import udistrital.avanzada.taller1.modelo.Persona;
 
 public class ControlVentana implements ActionListener {
 
@@ -21,6 +23,18 @@ public class ControlVentana implements ActionListener {
         ventana.panelLogin.bRegistrarse.addActionListener(this);
         ventana.panelRegistro.bRegistrar.addActionListener(this);
         ventana.setVisible(true);
+    }
+
+    public void limpiarCampos() {
+        ventana.panelRegistro.cNombre.setText("");
+        ventana.panelRegistro.cApellido.setText("");
+        ventana.panelRegistro.cCedula.setText("");
+        ventana.panelRegistro.cCorreo.setText("");
+        ventana.panelRegistro.cNumero.setText("");
+        ventana.panelRegistro.cMembresia.setText("");
+        ventana.panelRegistro.cContrasena.setText("");
+        ventana.panelLogin.cContrasena.setText("");
+        ventana.panelLogin.cUsuario.setText("");
     }
 
     @Override
@@ -42,11 +56,31 @@ public class ControlVentana implements ActionListener {
                 ventana.mostrarPanel("REGISTRO_PANEL");
                 break;
             case "Registrar":
+                String nombre = ventana.panelRegistro.cNombre.getText();
+                String apellido = ventana.panelRegistro.cApellido.getText();
+                String cedula = ventana.panelRegistro.cCedula.getText();
+                String numero = ventana.panelRegistro.cNumero.getText();
+                String correo = ventana.panelRegistro.cCorreo.getText();
+                String membresia = ventana.panelRegistro.cMembresia.getText();
+                String contraseña = ventana.panelRegistro.cContrasena.getText();
+                logica.crearUsuario(nombre, apellido, cedula, numero, correo, membresia, contraseña);
                 ventana.mostrarPanel("LOGIN_PANEL");
+                limpiarCampos();
                 break;
             case "Iniciar Sesion":
-                ventana.mostrarPanel("VEHICULO_PANEL");
-        }
+                String cedula1 = ventana.panelLogin.cUsuario.getText();
+                String contrasena = new String(ventana.panelLogin.cContrasena.getPassword());
 
+                Persona p = logica.login(cedula1, contrasena);
+                
+                if (p != null) {
+                    ventana.mostrarPanel("VEHICULO_PANEL");
+                    limpiarCampos();
+                }
+                else{
+                    JOptionPane.showMessageDialog(ventana, "Usuario o contraseña incorrectos");
+                }
+        }
     }
+
 }
