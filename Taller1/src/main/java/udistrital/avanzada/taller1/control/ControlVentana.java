@@ -18,6 +18,17 @@ import udistrital.avanzada.taller1.modelo.Persona;
  * @version 1.0
  * @date 26/09/2025
  */
+
+/* Fecha de Modificación: 27/09/2025
+ * Modificado por: Diego
+ * Descripción de la modificación:
+ *    - Se eliminó la dependencia del método {@code getUsuarioActivo()} en la clase {@link LogicaNegocio}.
+ *    - Ahora se utiliza directamente el objeto {@link Persona} retornado por el método {@code login()} 
+ *      para mostrar los datos del usuario autenticado en el panel de menú.
+ *    - Se simplificó el flujo de autenticación, reduciendo la necesidad de mantener un usuario activo
+ *      en la lógica de negocio y mejorando la legibilidad del código.
+ */
+
 public class ControlVentana implements ActionListener {
 
     // Ventana principal del sistema
