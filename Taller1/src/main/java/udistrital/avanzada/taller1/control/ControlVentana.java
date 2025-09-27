@@ -4,6 +4,7 @@ import udistrital.avanzada.taller1.vista.Ventana;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import udistrital.avanzada.taller1.modelo.Persona;
+import udistrital.avanzada.taller1.modelo.Usuario;
 
 /**
  * Clase ControlVentana
@@ -89,6 +90,49 @@ public class ControlVentana implements ActionListener {
         ventana.panelVehiculo.cMarca.setText("");
         ventana.panelVehiculo.cPotencia.setText("");
     }
+    /**
+     * Metodo para mostra panel segun tipo de usuario
+     * que se haya logeado
+     * @param persona 
+     */
+    public void mostrarPanel(Persona persona){
+        switch (persona.getRol()) {
+            case "Proveedor de Insumos":                
+               break;
+            case "Proveedor de Servicios":                           
+               break;
+            case "Administrador":
+               break;
+            case "Usuario":
+                //si usuario no activo entonces mostra dialogo
+                // metodo debee cambiar
+                boolean aprobado = ((Usuario) persona).isAprobado();
+                if(!aprobado){
+                    break;
+                }
+                ventana.mostrarPanel("MENU_PANEL");
+                limpiarCampos();
+                // Mostrar información del usuario
+                ventana.panelMenu.cNombre.setText(persona.getNombre());
+                ventana.panelMenu.cApellido.setText(persona.getApellido());
+                ventana.panelMenu.cCedula.setText(persona.getCedula());
+                ventana.panelMenu.cCorreo.setText(persona.getCorreo());
+                ventana.panelMenu.cNumero.setText(persona.getNumero());
+                ventana.panelMenu.cMembresia.setText(persona.getMembresia());
+
+                // Hacer los campos no editables
+                ventana.panelMenu.cNombre.setEditable(false);
+                ventana.panelMenu.cApellido.setEditable(false);
+                ventana.panelMenu.cCedula.setEditable(false);
+                ventana.panelMenu.cCorreo.setEditable(false);
+                ventana.panelMenu.cNumero.setEditable(false);
+                ventana.panelMenu.cMembresia.setEditable(false);     
+               break;
+            default:
+                break;
+             
+        }
+    }
 
     /**
      * Método que responde a los eventos generados por los botones de la interfaz.
@@ -144,27 +188,13 @@ public class ControlVentana implements ActionListener {
                 String cedula1 = ventana.panelLogin.cUsuario.getText();
                 String contrasena = new String(ventana.panelLogin.cContrasena.getPassword());
                 Persona p = logica.login(cedula1, contrasena);
+                
 
                 if (p != null) {
-                    // Si el login es correcto, mostrar panel de menú
-                    ventana.mostrarPanel("MENU_PANEL");
-                    limpiarCampos();
-
-                    // Mostrar información del usuario
-                    ventana.panelMenu.cNombre.setText(p.getNombre());
-                    ventana.panelMenu.cApellido.setText(p.getApellido());
-                    ventana.panelMenu.cCedula.setText(p.getCedula());
-                    ventana.panelMenu.cCorreo.setText(p.getCorreo());
-                    ventana.panelMenu.cNumero.setText(p.getNumero());
-                    ventana.panelMenu.cMembresia.setText(p.getMembresia());
-
-                    // Hacer los campos no editables
-                    ventana.panelMenu.cNombre.setEditable(false);
-                    ventana.panelMenu.cApellido.setEditable(false);
-                    ventana.panelMenu.cCedula.setEditable(false);
-                    ventana.panelMenu.cCorreo.setEditable(false);
-                    ventana.panelMenu.cNumero.setEditable(false);
-                    ventana.panelMenu.cMembresia.setEditable(false);
+                    // llmar al metodo para saber que panel mostrar segun tipo
+                    // de usuario
+                    mostrarPanel(p);
+                    // Si el login es correcto, mostrar panel de menú                    
                 } 
                 else {
                     ventana.mostrarMensajeDialogo(ventana, "Usuario o contraseña incorrectos");
