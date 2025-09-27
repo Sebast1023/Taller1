@@ -158,7 +158,7 @@ public class ControlVentana implements ActionListener {
                 mostrando = true;
             }
         }
-
+        // Comando de quien disaparo el evento
         String cmd = e.getActionCommand();
 
         switch (cmd) {
@@ -191,12 +191,12 @@ public class ControlVentana implements ActionListener {
                 
 
                 if (p != null) {
-                    // llmar al metodo para saber que panel mostrar segun tipo
-                    // de usuario
+                    // Si el login es correcto, mostrar panel de menú 
+                    // llamar al metodo mostraPanel  para saber que panel mostrar segun tipo de usuario
                     mostrarPanel(p);
-                    // Si el login es correcto, mostrar panel de menú                    
                 } 
                 else {
+                    // login incorrecto mostrar mensaje avisando de que esta incorrecto                    
                     ventana.mostrarMensajeDialogo(ventana, "Usuario o contraseña incorrectos");
                 }
                 break;
