@@ -1,5 +1,6 @@
 package udistrital.avanzada.taller1.control;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import udistrital.avanzada.taller1.modelo.Persona;
 import udistrital.avanzada.taller1.modelo.Publicacion;
@@ -48,7 +49,7 @@ public class ControlPublicacion {
         // se aumenta el contador en uno
         contador += 1;
         // crear publicacion
-        Publicacion aux = new Publicacion(titulo, descripcion, imagen, creador, contador, imagen);        
+        Publicacion aux = new Publicacion(titulo, descripcion, imagen, creador, contador, imagen, LocalDate.now());        
         // Añadir a lista de publicaciones
         publicaciones.add(aux);
     }
@@ -71,7 +72,9 @@ public class ControlPublicacion {
         aux.setTitulo(titulo);
         aux.setDescripcion(descripcion);
         aux.setContenido(contenido);
-        aux.setImagen(imagen);        
+        aux.setImagen(imagen);
+        // actulizar fecha de modificacion
+        aux.setFechaActualizacion(LocalDate.now());
     }
     /**
      * metodo para eliminar una publicacion de la lista con el id
