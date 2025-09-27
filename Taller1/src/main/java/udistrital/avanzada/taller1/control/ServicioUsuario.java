@@ -63,6 +63,6 @@ public class ServicioUsuario {
     }
     
     public void activarUsuario(Usuario usuario, boolean activo){
-        usuario.setActivo(activo);
+        usuario.setAprobado(activo);
     }
 }
