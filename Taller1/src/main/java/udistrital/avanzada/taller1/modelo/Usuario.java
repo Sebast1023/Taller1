@@ -123,10 +123,6 @@ public class Usuario extends Persona {
         this.amigos.remove(amigo);
     }
 
-    // =====================
-    // Métodos de vehículos
-    // =====================
-
     /**
      * Retorna la lista de vehículos del usuario.
      * 

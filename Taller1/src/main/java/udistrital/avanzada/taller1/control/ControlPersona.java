@@ -68,7 +68,7 @@ public class ControlPersona {
         }
     }
     return null; // No coincide
-}
+    }
 
     /**
      * Crea una persona tipo Usuario (pendiente de aprobación).
