@@ -64,7 +64,7 @@ public class ControlPersona {
      */
     public void crearPersonaUsuario(String nombre, String apellido, String cedula, String numero, String correo, String membresia, String contraseña){
         //si ya existe la persona salir de la funcion
-        if(getPersona(cedula)== null){return;} 
+        if(!(getPersona(cedula)== null)){return;} 
         Persona usuario = new Usuario(nombre, apellido, cedula, numero, correo, membresia, contraseña);
         personas.add(usuario);
     }
@@ -80,7 +80,7 @@ public class ControlPersona {
      */
     public void crearPersonaAdministrador(String nombre, String apellido, String cedula, String numero, String correo, String membresia, String contraseña){
         //si ya existe la persona salir de la funcion
-        if(getPersona(cedula)== null){return;} 
+        if(!(getPersona(cedula)== null)){return;} 
         Persona administrador = new Administrador(nombre, apellido, cedula, numero, correo, membresia, contraseña);
         personas.add(administrador);
     }
@@ -98,7 +98,7 @@ public class ControlPersona {
      */
     public void crearPersonaProveedorInsumos(String nombre, String apellido, String cedula, String numero, String correo, String membresia, String contraseña, String empresa, int nit){
         //si ya existe la persona salir de la funcion
-        if(getPersona(cedula)== null){return;} 
+        if(!(getPersona(cedula)== null)){return;} 
         Persona proveedorInsumos = new ProveedorInsumos(nombre, apellido, cedula, numero, correo, membresia, contraseña, empresa, nit);
         personas.add(proveedorInsumos);
     }
@@ -116,7 +116,7 @@ public class ControlPersona {
      */
     public void crearPersonaProveedorServicios(String nombre, String apellido, String cedula, String numero, String correo, String membresia, String contraseña, String empresa, int nit){
         //si ya existe la persona salir de la funcion
-        if(getPersona(cedula)== null){return;} 
+        if(!(getPersona(cedula)== null)){return;} 
         Persona proveedorServicios = new ProveedorServicios(nombre, apellido, cedula, numero, correo, membresia, contraseña, empresa, nit);
         personas.add(proveedorServicios);
     }
