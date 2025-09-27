@@ -25,6 +25,8 @@ public class ControlVentana implements ActionListener {
         ventana.panelVehiculo.bMoto.addActionListener(this);
         ventana.panelVehiculo.bScooter.addActionListener(this);
         ventana.panelMenu.bSalir.addActionListener(this);
+        ventana.panelMenu.bVehiculos.addActionListener(this);
+        ventana.panelVehiculo.bAtras.addActionListener(this);
         ventana.setVisible(true);
     }
 
@@ -78,23 +80,43 @@ public class ControlVentana implements ActionListener {
                 String contrasena = new String(ventana.panelLogin.cContrasena.getPassword());
                 Persona p = logica.login(cedula1, contrasena);
                 if (p != null) {
-                    ventana.mostrarPanel("VEHICULO_PANEL");
+                    ventana.mostrarPanel("MENU_PANEL");
+                    limpiarCampos();
+                    Persona activo = logica.getUsuarioActivo();
+                    ventana.panelMenu.cNombre.setText(activo.getNombre());
+                    ventana.panelMenu.cApellido.setText(activo.getApellido());
+                    ventana.panelMenu.cCedula.setText(activo.getCedula());
+                    ventana.panelMenu.cCorreo.setText(activo.getCorreo());
+                    ventana.panelMenu.cNumero.setText(activo.getNumero());
+                    ventana.panelMenu.cMembresia.setText(activo.getMembresia());
+                    ventana.panelMenu.cNombre.setEditable(false);
+                    ventana.panelMenu.cApellido.setEditable(false);
+                    ventana.panelMenu.cCedula.setEditable(false);
+                    ventana.panelMenu.cCorreo.setEditable(false);
+                    ventana.panelMenu.cNumero.setEditable(false);
+                    ventana.panelMenu.cMembresia.setEditable(false);
                     break;
                 }
                 else{
                     JOptionPane.showMessageDialog(ventana, "Usuario o contraseña incorrectos");
                     break;
                 }
+            case "Vehiculos":
+                ventana.mostrarPanel("VEHICULO_PANEL");
+                break;
             case "Scooter":
-                ventana.mostrarPanel("MENU_PANEL");
+                ventana.mostrarPanel("LOGIN_PANEL");
                 limpiarCampos();
                 break;
             case "Moto":
-                ventana.mostrarPanel("MENU_PANEL");
+                ventana.mostrarPanel("LOGIN_PANEL");
                 limpiarCampos();
                 break;
             case "Salir":
                 ventana.mostrarPanel("LOGIN_PANEL");
+                break;
+            case "Atras":
+                ventana.mostrarPanel("MENU_PANEL");
                 break;
         }
     }
