@@ -15,18 +15,31 @@ import udistrital.avanzada.taller1.modelo.Persona;
  * para operaciones como el inicio de sesión o el registro de usuarios.
  * 
  * @author Diego
- * @version 1.0
- * @date 26/09/2025
+ * @version 1.1
+ * @date 27/09/2025
  */
 
 /* Fecha de Modificación: 27/09/2025
  * Modificado por: Diego
+ * Nro. Orden de Trabajo: 001
  * Descripción de la modificación:
  *    - Se eliminó la dependencia del método {@code getUsuarioActivo()} en la clase {@link LogicaNegocio}.
  *    - Ahora se utiliza directamente el objeto {@link Persona} retornado por el método {@code login()} 
  *      para mostrar los datos del usuario autenticado en el panel de menú.
  *    - Se simplificó el flujo de autenticación, reduciendo la necesidad de mantener un usuario activo
  *      en la lógica de negocio y mejorando la legibilidad del código.
+ */
+
+/* Fecha de Modificación: 27/09/2025
+ * Modificado por: Diego
+ * Nro. Orden de Trabajo: 002
+ * Descripción de la modificación:
+ *    - Se eliminó el mensaje duplicado "Usuario o contraseña incorrectos" 
+ *      en el flujo de inicio de sesión, ya que la clase {@link LogicaNegocio}
+ *      ahora gestiona todos los mensajes de validación (credenciales incorrectas
+ *      o usuario pendiente de aprobación).
+ *    - Con esto se evita la duplicación de mensajes en pantalla
+ *      y se mejora la separación de responsabilidades entre capas.
  */
 
 public class ControlVentana implements ActionListener {
@@ -146,6 +159,7 @@ public class ControlVentana implements ActionListener {
                 String contrasena = new String(ventana.panelLogin.cContrasena.getPassword());
                 Persona p = logica.login(cedula1, contrasena);
 
+                // Si el login es exitoso, mostrar panel
                 if (p != null) {
                     // Si el login es correcto, mostrar panel de menú
                     ventana.mostrarPanel("MENU_PANEL");
@@ -166,9 +180,6 @@ public class ControlVentana implements ActionListener {
                     ventana.panelMenu.cCorreo.setEditable(false);
                     ventana.panelMenu.cNumero.setEditable(false);
                     ventana.panelMenu.cMembresia.setEditable(false);
-                } 
-                else {
-                    JOptionPane.showMessageDialog(ventana, "Usuario o contraseña incorrectos");
                 }
                 break;
 

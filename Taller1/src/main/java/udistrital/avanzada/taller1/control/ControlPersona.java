@@ -23,11 +23,19 @@ import udistrital.avanzada.taller1.modelo.Usuario;
  * Descripción de la modificación:
  *    - Se añadió validación en validarInicioSesion() para impedir el acceso
  *      a usuarios que no hayan sido aprobados por un administrador.
- *    - Se agregó el método buscarPersonaPorCedula(int) para facilitar búsquedas.
+ *    - Se agregó el método buscarPersonaPorCedula(String) para facilitar búsquedas.
  *    - Se añadió el método getPersonas() para exponer la lista interna de personas.
  *    - Se clarificó la responsabilidad de ControlPersona: ahora sólo gestiona
- *      personas y autenticación; la creación/registro de proveedores y la gestión
- *      administrativa quedan en ControlAdministrador (separación de responsabilidades).
+ *      personas y autenticación; la gestión administrativa queda separada.
+ */
+
+/* Fecha de Modificacion: 27/09/2025
+ * Modificado por: Diego
+ * Nro. Orden de Trabajo: 002
+ * Descripción de la modificación:
+ *    - Se trasladó la validación de aprobación de usuario desde ControlPersona hacia LogicaNegocio.
+ *       Ahora ControlPersona solo se encarga de verificar credenciales,
+ *       mientras que LogicaNegocio valida el estado de aprobación del usuario.
  */
 public class ControlPersona {
     
@@ -39,31 +47,27 @@ public class ControlPersona {
         this.personas = new ArrayList<>();
     }
 
-    /**
-     * Valida el inicio de sesión de una persona en el sistema.
-     * Si las credenciales son correctas y el usuario está aprobado,
-     * devuelve el objeto Persona correspondiente.
-     * 
-     * @param cedula     Cédula del usuario
-     * @param contrasena Contraseña del usuario
-     * @return Persona si las credenciales son válidas, null en caso contrario
-     */
-    public Persona validarInicioSesion(String cedula, String contrasena) {
-        for (Persona p : personas) {
-            if (p.getCedula().equals(cedula) && p.getContraseña().equals(contrasena)) {
+ /**
+ * Valida las credenciales de inicio de sesión de una persona.
+ * <p>
+ * Este método solo verifica que la cédula y la contraseña coincidan con una persona registrada.
+ * La validación de aprobación (en caso de los usuarios) se realiza en {@link LogicaNegocio}.
+ * </p>
+ * 
+ * @param cedula Cédula de la persona
+ * @param contrasena Contraseña ingresada
+ * @return La persona encontrada si las credenciales son válidas, 
+ *         o {@code null} si no se encuentra coincidencia.
+ */
 
-                // Si es usuario, validamos si fue aprobado
-                if (p instanceof Usuario u) {
-                    if (!u.isAprobado()) {
-                        System.out.println("El usuario aún no ha sido aprobado por un administrador.");
-                        return null;
-                    }
-                }
-                return p; // Login exitoso
-            }
+    public Persona validarInicioSesion(String cedula, String contrasena) {
+    for (Persona p : personas) {
+        if (p.getCedula().equals(cedula) && p.getContraseña().equals(contrasena)) {
+            return p; // Login Exitoso
         }
-        return null; // No coincide
     }
+    return null; // No coincide
+}
 
     /**
      * Crea una persona tipo Usuario (pendiente de aprobación).
@@ -77,7 +81,7 @@ public class ControlPersona {
      * @param contraseña   Contraseña de acceso
      */
     public void crearPersonaUsuario(String cedula, String nombre, String apellido, String telefono, String correo, String membresia, String contraseña) {
-        Usuario usuario = new Usuario(cedula, nombre, apellido, telefono, correo, membresia, contraseña);
+        Usuario usuario = new Usuario(nombre, apellido, cedula, telefono, correo, membresia, contraseña);
         personas.add(usuario);
     }
 
