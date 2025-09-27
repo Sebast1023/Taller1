@@ -4,7 +4,7 @@ package udistrital.avanzada.taller1.modelo;
  * Representa un Vehículo dentro del sistema Taller1.
  * <p>
  * Un vehículo contiene información básica como marca, modelo, año, potencia, 
- * color y placa única, además de estar asociado a un {@link Usuario}.
+ * color, placa única y tipo de vehículo, además de estar asociado a un {@link Usuario}.
  * </p>
  * 
  * <p>
@@ -23,8 +23,9 @@ package udistrital.avanzada.taller1.modelo;
  *    - Se cambiaron los tipos de datos de los atributos "ano" y "potencia" 
  *      de int a String, para facilitar el manejo flexible de valores.
  *    - Se eliminó el atributo "carga", ya que no era requerido en la especificación actual.
+ *    - Se añadió el atributo "tipoVehiculo" para identificar el tipo de vehículo (por el momento scooter y motos eléctricas). 
+ *     
  */
-
 
 public class Vehiculo {
     private String marca;
@@ -32,20 +33,23 @@ public class Vehiculo {
     private String ano;
     private String potencia;
     private String color;
-    // placa sera el atributo unico nadie más debe tenerlo
+    private String tipoVehiculo; // nuevo atributo
     private String placa;
     private Usuario usuario;
 
-    public Vehiculo(String marca, String modelo, String ano, String potencia, String color, String placa, Usuario usuario) {
+    public Vehiculo(String marca, String modelo, String ano, String potencia, 
+                    String color, String tipoVehiculo, String placa, Usuario usuario) {
         this.marca = marca;
         this.modelo = modelo;
         this.ano = ano;
         this.potencia = potencia;
         this.color = color;
+        this.tipoVehiculo = tipoVehiculo;
         this.placa = placa;
         this.usuario = usuario;
     }
 
+    // Getters y Setters
     public String getMarca() {
         return marca;
     }
@@ -86,6 +90,14 @@ public class Vehiculo {
         this.color = color;
     }
 
+    public String getTipoVehiculo() {
+        return tipoVehiculo;
+    }
+
+    public void setTipoVehiculo(String tipoVehiculo) {
+        this.tipoVehiculo = tipoVehiculo;
+    }
+
     public String getPlaca() {
         return placa;
     }
@@ -97,5 +109,5 @@ public class Vehiculo {
     public Usuario getUsuario() {
         return usuario;
     }
-    
 }
+
