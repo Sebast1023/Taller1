@@ -1,30 +1,51 @@
 package udistrital.avanzada.taller1.modelo;
+
 /**
+ * Clase abstracta que representa a una persona dentro del sistema.
+ * 
+ * Esta clase es la superclase de Usuario, Proveedor y Administrador,
+ * siguiendo el principio de sustitución de Liskov (LSP) dentro del 
+ * modelo de herencia.
+ * 
+ * Proporciona atributos y métodos comunes a todas las personas,
+ * así como operaciones generales como autenticación y representación textual.
+ * 
  * @author mauricio
- * 23/9/2025
- * la clase Persona es la superclase de las clases Usuario, Proveedor y
- * Administrador para la sustitucion de Liskov
+ * @version 1.1
+ * @date 23/09/2025
+ * 
+ * @modified Diego
+ * @modificationDate 27/09/2025
+ * Se agregaron métodos para:
+ * - obtener el rol de la persona (getRol)
+ * - sobrescribir toString() para una descripción legible
+ * - mejorar documentación y cumplir con SOLID
  */
 public abstract class Persona {
-    protected String nombre;    
+    
+    protected String nombre;
     protected String apellido;
     protected String cedula;
     protected String numero;
     protected String correo;
+    
+    /** Membresía o tipo de afiliación */
     protected String membresia;
     protected String contraseña;
-    //contructor
+    
     public Persona() {
     }
+
     /**
-     * Constructor Persona con los siguientes parametros
-     * @param nombre
-     * @param apellido
-     * @param cedula
-     * @param numero
-     * @param correo 
-     * @param membresia de la asociacion
-     * @param contraseña
+     * Constructor completo de la clase Persona.
+     *
+     * @param nombre      Nombre de la persona
+     * @param apellido    Apellido de la persona
+     * @param cedula      Documento de identidad
+     * @param numero      Número de teléfono
+     * @param correo      Correo electrónico
+     * @param membresia   Tipo de membresía o afiliación
+     * @param contraseña  Contraseña de acceso
      */
     public Persona(String nombre, String apellido, String cedula, String numero, String correo, String membresia, String contraseña) {
         this.nombre = nombre;
@@ -35,7 +56,7 @@ public abstract class Persona {
         this.membresia = membresia;
         this.contraseña = contraseña;
     }
-    // getters y setters
+
     public String getNombre() {
         return nombre;
     }
@@ -91,6 +112,28 @@ public abstract class Persona {
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
-    
-    
+
+    /**
+     * Método abstracto que devuelve el rol del tipo de persona.
+     * 
+     * Cada subclase (Usuario, Proveedor, Administrador) deberá implementar este método.
+     * 
+     * @return Rol de la persona (ejemplo: "Usuario", "Proveedor", "Administrador")
+     */
+    public abstract String getRol();
+
+    /**
+     * Retorna una representación legible de la persona.
+     * No muestra la contraseña para proteger la privacidad.
+     * 
+     * @return Cadena con nombre completo, cédula, teléfono, correo y membresía
+     */
+    @Override
+    public String toString() {
+        return nombre + " " + apellido +
+               " | Cédula: " + cedula +
+               " | Teléfono: " + numero +
+               " | Correo: " + correo +
+               " | Membresía: " + membresia;
+    }
 }
