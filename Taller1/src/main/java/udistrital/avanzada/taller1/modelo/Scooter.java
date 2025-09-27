@@ -1,8 +1,8 @@
 package udistrital.avanzada.taller1.modelo;
 
-public class Patineta extends Vehiculo {
+public class Scooter extends Vehiculo {
 
-    public Patineta(String marca, String modelo, int ano, int potencia, int carga, String color, String placa, Usuario usuario) {
+    public Scooter(String marca, String modelo, int ano, int potencia, int carga, String color, String placa, Usuario usuario) {
         super(marca, modelo, ano, potencia, carga, color, placa, usuario);
     }
 
