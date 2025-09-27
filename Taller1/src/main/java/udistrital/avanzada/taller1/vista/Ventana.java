@@ -16,6 +16,7 @@ public class Ventana extends JFrame {
     public PanelRegistro panelRegistro;
     public PanelVehiculo panelVehiculo;
     public PanelMenu panelMenu;
+    public PanelAdmin panelAdmin;
     
     public Ventana(String title) {
         super(title);
@@ -30,12 +31,14 @@ public class Ventana extends JFrame {
         panelRegistro = new PanelRegistro();
         panelVehiculo = new PanelVehiculo();
         panelMenu = new PanelMenu();
+        panelAdmin = new PanelAdmin();
         
         panelPrincipal.add(panelLogin, "LOGIN_PANEL");
         panelPrincipal.add(panelRegistro, "REGISTRO_PANEL");
         panelPrincipal.add(panelVehiculo, "VEHICULO_PANEL");
         panelPrincipal.add(panelMenu, "MENU_PANEL");
-                
+        panelPrincipal.add(panelAdmin, "ADMIN_PANEL");
+        
         this.add(panelPrincipal);
         
         this.addWindowListener(new WindowAdapter() {
