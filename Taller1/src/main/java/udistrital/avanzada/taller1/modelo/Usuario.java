@@ -16,19 +16,26 @@ public class Usuario extends Persona {
 
     private ArrayList<Usuario> amigos;
     private ArrayList<Vehiculo> vehiculos;
+    // bandera para saber si el usuario esta activo o aprovado
+    private boolean activo;
 
-    // contructor
-    public Usuario() {
-        //Se instancian los grupos que almacenaran los objetos respectivos
-        this.amigos = new ArrayList<Usuario>();
-        this.vehiculos = new ArrayList<Vehiculo>();
-    }
+    /**
+     * contructor con los siguientes parametros
+     * @param nombre
+     * @param apellido
+     * @param cedula
+     * @param numero
+     * @param correo
+     * @param membresia
+     * @param contraseña 
+     */
 
     public Usuario(String nombre, String apellido, String cedula, String numero, String correo, String membresia, String contraseña) {
         super(nombre, apellido, cedula, numero, correo, membresia, contraseña);
         //Se instancian los grupos que almacenaran los objetos respectivos
         this.amigos = new ArrayList<Usuario>();
         this.vehiculos = new ArrayList<Vehiculo>();
+        this.activo = false;
     }
 
     public ArrayList<Usuario> getAmigos() {
@@ -73,6 +80,14 @@ public class Usuario extends Persona {
 
     public ArrayList<Vehiculo> getVehiculos() {
         return vehiculos;
+    }
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
     }
     
 }
