@@ -5,9 +5,9 @@ import java.util.ArrayList;
 /**
  * @author mauricio
  * 25/9/2025
- * La interfaz Publicador es para que class que puedan hacer post tengan metodos
- * comunes para agregar y quitar post de sus propia lista local de objetos de
- * tipo Publicacion
+ * La interfaz Publicador es para que clases que puedan hacer post o
+ * publicaciones tengan metodos comunes para agregar y quitar post 
+ * de sus propia lista local de objetos de tipo Publicacion
  */
 public interface Publicador {
     public void addPost(Publicacion post);

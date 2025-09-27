@@ -1,9 +1,11 @@
 package udistrital.avanzada.taller1.vista;
 
 import java.awt.CardLayout;
+import java.awt.Component;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class Ventana extends JFrame {
@@ -45,5 +47,13 @@ public class Ventana extends JFrame {
      public void mostrarPanel(String nombre){
         cardLayout.show(panelPrincipal, nombre);
     }
-    
+     
+     /**
+     * metodo para mostrar cuadro de dialogo
+     * @param componente
+     * @param mensaje 
+     */
+    public void mostrarMensajeDialogo(Component componente, String mensaje){
+        JOptionPane.showMessageDialog(componente, mensaje);
+    } 
 }

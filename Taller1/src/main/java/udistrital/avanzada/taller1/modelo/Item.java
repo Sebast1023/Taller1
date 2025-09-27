@@ -4,7 +4,7 @@
  */
 package udistrital.avanzada.taller1.modelo;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  * @author mauricio
@@ -16,13 +16,14 @@ public abstract class Item {
     protected String nombre;
     protected String descripcion;
     protected double precio;
-    protected Date fechaCreacion;
-    protected Date fechaActualizacion;    
-    //Nos dice si puede ser visible a otras personas tipo Usuario o Proveedor
-    //Administrador puede ver todo
+    protected LocalDate fechaCreacion;
+    protected LocalDate fechaActualizacion;    
+    //visibilidad dice si puede ser visible a otras personas tipo Usuario o Proveedor
+    //Administrador puede verla sin importar el estado
     protected boolean visibidad; 
     //El Proveedor que creo el Item
     private Proveedor proveedor;
+    //Identificador unico
     private int id;
     // URL de la imagen en este caso seria una ruta local
     private String imagen;
@@ -32,12 +33,12 @@ public abstract class Item {
      * @param descripcion
      * @param precio
      * @param fechaCreacion
-     * @param visibidad
-     * @param proveedor
-     * @param id 
-     * @param imagen
+     * @param visibidad se puede ver por otros usuarios
+     * @param proveedor creador del item
+     * @param imagen URL de la imagen en este caso seria una ruta local
+     * @param id identificador unico
      */
-    public Item(String nombre, String descripcion, double precio, Date fechaCreacion, boolean visibidad, Proveedor proveedor, int id, String imagen) {
+    public Item(String nombre, String descripcion, double precio, LocalDate fechaCreacion, boolean visibidad, Proveedor proveedor, int id, String imagen) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
@@ -72,19 +73,15 @@ public abstract class Item {
         this.precio = precio;
     }
 
-    public Date getFechaCreacion() {
+    public LocalDate getFechaCreacion() {
         return fechaCreacion;
     }
 
-    public void setFechaCreacion(Date fechaCreacion) {
-        this.fechaCreacion = fechaCreacion;
-    }
-
-    public Date getFechaActualizacion() {
+    public LocalDate getFechaActualizacion() {
         return fechaActualizacion;
     }
 
-    public void setFechaActualizacion(Date fechaActualizacion) {
+    public void setFechaActualizacion(LocalDate fechaActualizacion) {
         this.fechaActualizacion = fechaActualizacion;
     }
 

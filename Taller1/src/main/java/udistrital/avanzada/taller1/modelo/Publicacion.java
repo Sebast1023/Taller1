@@ -1,5 +1,7 @@
 package udistrital.avanzada.taller1.modelo;
 
+import java.time.LocalDate;
+
 /**
  * @author mauricio
  * 23/9/2025
@@ -12,6 +14,8 @@ public class Publicacion {
     private String descripcion;
     private Persona creador;
     private String imagen;
+    protected LocalDate fechaCreacion;
+    protected LocalDate fechaActualizacion;
     private int id;   
     /**
      * Constructor con los siguientes parametros
@@ -21,14 +25,17 @@ public class Publicacion {
      * @param creador
      * @param id 
      * @param imagen
+     * @param fechaCreacion 
      */
-    public Publicacion(String titulo, String descripcion, String contenido, Persona creador, int id, String imagen) {
+    public Publicacion(String titulo, String descripcion, String contenido, Persona creador, int id, String imagen, LocalDate fechaCreacion) {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.contenido = contenido;
         this.creador = creador;
         this.id = id;
         this.imagen = imagen;
+        this.fechaCreacion = fechaCreacion;
+        this.fechaActualizacion = fechaCreacion;        
     }
 
     public String getContenido() {
@@ -62,4 +69,25 @@ public class Publicacion {
     public void setImagen(String imagen) {
         this.imagen = imagen;
     }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public LocalDate getFechaActualizacion() {
+        return fechaActualizacion;
+    }
+
+    public void setFechaActualizacion(LocalDate fechaActualizacion) {
+        this.fechaActualizacion = fechaActualizacion;
+    }
+
+    public LocalDate getFechaCreacion() {
+        return fechaCreacion;
+    }
+        
 }

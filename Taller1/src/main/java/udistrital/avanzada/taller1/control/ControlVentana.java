@@ -3,19 +3,20 @@ package udistrital.avanzada.taller1.control;
 import udistrital.avanzada.taller1.vista.Ventana;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JOptionPane;
 import udistrital.avanzada.taller1.modelo.Persona;
+import udistrital.avanzada.taller1.modelo.Usuario;
 
 /**
  * Clase ControlVentana
- * 
- * Controla la interacción entre la interfaz gráfica {@link Ventana} y la lógica del negocio.
- * Se encarga de escuchar los eventos de los botones en los diferentes paneles,
- * gestionar el flujo de navegación entre ellos y comunicarse con la capa lógica
- * para operaciones como el inicio de sesión o el registro de usuarios.
- * 
+ *
+ * Controla la interacción entre la interfaz gráfica {@link Ventana} y la lógica
+ * del negocio. Se encarga de escuchar los eventos de los botones en los
+ * diferentes paneles, gestionar el flujo de navegación entre ellos y
+ * comunicarse con la capa lógica para operaciones como el inicio de sesión o el
+ * registro de usuarios.
+ *
  * @author Diego
- * @version 1.1
+ * @version 1.2
  * @date 27/09/2025
  */
 
@@ -23,35 +24,57 @@ import udistrital.avanzada.taller1.modelo.Persona;
  * Modificado por: Diego
  * Nro. Orden de Trabajo: 001
  * Descripción de la modificación:
- *    - Se eliminó la dependencia del método {@code getUsuarioActivo()} en la clase {@link LogicaNegocio}.
- *    - Ahora se utiliza directamente el objeto {@link Persona} retornado por el método {@code login()} 
- *      para mostrar los datos del usuario autenticado en el panel de menú.
- *    - Se simplificó el flujo de autenticación, reduciendo la necesidad de mantener un usuario activo
- *      en la lógica de negocio y mejorando la legibilidad del código.
- */
+ *    - Resolución de conflicto merge: unificación del flujo de login.
+ *    - El Control solicita el resultado a LogicaNegocio y la Vista muestra los mensajes.
+ *    - Se preserva la responsabilidad: LogicaNegocio decide el mensaje, Ventana lo muestra.
+ *
+*/
 
-/* Fecha de Modificación: 27/09/2025
+/* 
+ * Fecha de Modificación: 27/09/2025
  * Modificado por: Diego
  * Nro. Orden de Trabajo: 002
- * Descripción de la modificación:
- *    - Se eliminó el mensaje duplicado "Usuario o contraseña incorrectos" 
- *      en el flujo de inicio de sesión, ya que la clase {@link LogicaNegocio}
- *      ahora gestiona todos los mensajes de validación (credenciales incorrectas
- *      o usuario pendiente de aprobación).
- *    - Con esto se evita la duplicación de mensajes en pantalla
- *      y se mejora la separación de responsabilidades entre capas.
+ * Descripción:
+ *    - Se añadió la validación de campos vacíos en los formularios
+ *      de registro e inicio de sesión para evitar errores de entrada.
+ *    - Ahora se muestran mensajes de advertencia cuando el usuario
+ *      intenta continuar con campos incompletos.
+ *    - Se añadió confirmación visual al registrar un usuario con éxito.
+ *
+ */
+
+/* 
+ * ------------------------------------------------------------
+ * Fecha de Modificación: 27/09/2025
+ * Modificado por: Diego
+ * Nro. Orden de Trabajo: 003
+ * Descripción:
+ *    - 001: Se eliminó dependencia de getUsuarioActivo(), ahora login usa directamente Persona.
+ *    - 002: Se eliminó mensaje duplicado "Usuario o contraseña incorrectos".
+ *    - 003: Se simplificó flujo de autenticación y mejorada legibilidad.
+ *    - 004: Se añadieron validaciones de campos vacíos en login y registro.
+ *    - 005: Se corrigió carga de datos en panel de menú para usuarios y administradores.
+ * ------------------------------------------------------------
+ */
+
+/* 
+ * Fecha de Modificación: 27/09/2025
+ * Modificado por: Diego
+ * Nro. Orden de Trabajo: 004
+ * Descripción:
+ *    - Se añadió la validación de campos vacíos en los formularios
+ *      de registro e inicio de sesión para evitar errores de entrada.
+ *    - Ahora se muestran mensajes de advertencia cuando el usuario
+ *      intenta continuar con campos incompletos.
+ *    - Se añadió confirmación visual al registrar un usuario con éxito.
+ *
  */
 
 public class ControlVentana implements ActionListener {
 
-    // Ventana principal del sistema
     private Ventana ventana;
-    
-    // Instancia de la lógica de negocio que maneja los datos del sistema
     private LogicaNegocio logica;
-    
-    // Variable que indica si la contraseña se está mostrando o no
-    private boolean mostrando = false;
+    private boolean mostrando = false; // Para mostrar u ocultar contraseña
 
     /**
      * Constructor de ControlVentana.
@@ -84,9 +107,6 @@ public class ControlVentana implements ActionListener {
 
     /**
      * Limpia los campos de texto en todos los paneles de la interfaz.
-     * 
-     * Este método se utiliza para evitar que queden datos anteriores en los
-     * formularios después de un registro o un inicio/cierre de sesión.
      */
     public void limpiarCampos() {
         ventana.panelRegistro.cNombre.setText("");
@@ -105,81 +125,130 @@ public class ControlVentana implements ActionListener {
     }
 
     /**
-     * Método que responde a los eventos generados por los botones de la interfaz.
+     * Muestra el panel correspondiente según el tipo de usuario.
      * 
-     * Dependiendo del comando recibido, se realiza una acción específica como:
-     * mostrar u ocultar la contraseña, registrar un nuevo usuario, iniciar sesión
-     * o navegar entre paneles.
+     * @param persona Persona autenticada (Usuario, Administrador, etc.)
+     */
+    public void mostrarPanel(Persona persona){
+        switch (persona.getRol()) {
+            case "Proveedor de Insumos":                
+                // Implementación futura
+                break;
+            case "Proveedor de Servicios":                           
+                // Implementación futura
+                break;
+            case "Administrador":
+                // Mostrar panel de menú con datos del administrador
+                ventana.mostrarPanel("MENU_PANEL");
+                ventana.panelMenu.cNombre.setText(persona.getNombre());
+                ventana.panelMenu.cApellido.setText(persona.getApellido());
+                ventana.panelMenu.cCedula.setText(persona.getCedula());
+                ventana.panelMenu.cCorreo.setText(persona.getCorreo());
+                ventana.panelMenu.cNumero.setText(persona.getNumero());
+                ventana.panelMenu.cMembresia.setText(persona.getMembresia());
+
+                ventana.panelMenu.cNombre.setEditable(false);
+                ventana.panelMenu.cApellido.setEditable(false);
+                ventana.panelMenu.cCedula.setEditable(false);
+                ventana.panelMenu.cCorreo.setEditable(false);
+                ventana.panelMenu.cNumero.setEditable(false);
+                ventana.panelMenu.cMembresia.setEditable(false);
+                break;
+            case "Usuario":
+                boolean aprobado = ((Usuario) persona).isAprobado();
+                if(!aprobado){
+                    // No mostrar panel si usuario no aprobado
+                    ventana.mostrarMensajeDialogo(ventana, "Tu cuenta aún no ha sido aprobada por el administrador.");
+                    break;
+                }
+                ventana.mostrarPanel("MENU_PANEL");
+
+                ventana.panelMenu.cNombre.setText(persona.getNombre());
+                ventana.panelMenu.cApellido.setText(persona.getApellido());
+                ventana.panelMenu.cCedula.setText(persona.getCedula());
+                ventana.panelMenu.cCorreo.setText(persona.getCorreo());
+                ventana.panelMenu.cNumero.setText(persona.getNumero());
+                ventana.panelMenu.cMembresia.setText(persona.getMembresia());
+
+                ventana.panelMenu.cNombre.setEditable(false);
+                ventana.panelMenu.cApellido.setEditable(false);
+                ventana.panelMenu.cCedula.setEditable(false);
+                ventana.panelMenu.cCorreo.setEditable(false);
+                ventana.panelMenu.cNumero.setEditable(false);
+                ventana.panelMenu.cMembresia.setEditable(false);     
+                break;
+            default:
+                break;
+        }
+    }
+
+    /**
+     * Responde a los eventos generados por los botones de la interfaz.
      * 
-     * @param e evento que representa la acción ejecutada por el usuario
+     * @param e evento generado por el usuario
      */
     @Override
     public void actionPerformed(ActionEvent e) {
         
-        // Evento para mostrar u ocultar la contraseña
+        // Mostrar u ocultar contraseña
         if ("mostrarContrasena".equals(e.getActionCommand())) {
             if (mostrando) {
-                ventana.panelLogin.cContrasena.setEchoChar('•'); // Ocultar
+                ventana.panelLogin.cContrasena.setEchoChar('•');
                 ventana.panelLogin.bMostrarContrasena.setText("👁");
                 mostrando = false;
             } else {
-                ventana.panelLogin.cContrasena.setEchoChar((char) 0); // Mostrar
+                ventana.panelLogin.cContrasena.setEchoChar((char) 0);
                 ventana.panelLogin.bMostrarContrasena.setText("🔒");
                 mostrando = true;
             }
         }
 
         String cmd = e.getActionCommand();
-
         switch (cmd) {
-            
             case "Registrese":
                 ventana.mostrarPanel("REGISTRO_PANEL");
                 break;
 
             case "Registrar":
-                // Obtención de datos del formulario de registro
-                String nombre = ventana.panelRegistro.cNombre.getText();
-                String apellido = ventana.panelRegistro.cApellido.getText();
-                String cedula = ventana.panelRegistro.cCedula.getText();
-                String numero = ventana.panelRegistro.cNumero.getText();
-                String correo = ventana.panelRegistro.cCorreo.getText();
-                String membresia = ventana.panelRegistro.cMembresia.getText();
-                String contraseña = ventana.panelRegistro.cContrasena.getText();
+                String nombre = ventana.panelRegistro.cNombre.getText().trim();
+                String apellido = ventana.panelRegistro.cApellido.getText().trim();
+                String cedula = ventana.panelRegistro.cCedula.getText().trim();
+                String numero = ventana.panelRegistro.cNumero.getText().trim();
+                String correo = ventana.panelRegistro.cCorreo.getText().trim();
+                String membresia = ventana.panelRegistro.cMembresia.getText().trim();
+                String contraseña = ventana.panelRegistro.cContrasena.getText().trim();
 
-                // Creación del usuario en la capa lógica
+                if (nombre.isEmpty() || apellido.isEmpty() || cedula.isEmpty() || numero.isEmpty()
+                        || correo.isEmpty() || membresia.isEmpty() || contraseña.isEmpty()) {
+                    ventana.mostrarMensajeDialogo(ventana, "Por favor complete todos los campos antes de registrarse.");
+                    break;
+                }
+
                 logica.crearUsuario(nombre, apellido, cedula, numero, correo, membresia, contraseña);
                 limpiarCampos();
                 ventana.mostrarPanel("LOGIN_PANEL");
+                ventana.mostrarMensajeDialogo(ventana, "Registro exitoso. Espere la aprobación del administrador.");
                 break;
 
             case "Iniciar Sesion":
-                // Validación de credenciales de usuario
-                String cedula1 = ventana.panelLogin.cUsuario.getText();
-                String contrasena = new String(ventana.panelLogin.cContrasena.getPassword());
+                String cedula1 = ventana.panelLogin.cUsuario.getText().trim();
+                String contrasena = new String(ventana.panelLogin.cContrasena.getPassword()).trim();
+
+                if (cedula1.isEmpty() || contrasena.isEmpty()) {
+                    ventana.mostrarMensajeDialogo(ventana, "Debe ingresar su cédula y contraseña para continuar.");
+                    break;
+                }
+
                 Persona p = logica.login(cedula1, contrasena);
 
-                // Si el login es exitoso, mostrar panel
                 if (p != null) {
-                    // Si el login es correcto, mostrar panel de menú
-                    ventana.mostrarPanel("MENU_PANEL");
-                    limpiarCampos();
-
-                    // Mostrar información del usuario
-                    ventana.panelMenu.cNombre.setText(p.getNombre());
-                    ventana.panelMenu.cApellido.setText(p.getApellido());
-                    ventana.panelMenu.cCedula.setText(p.getCedula());
-                    ventana.panelMenu.cCorreo.setText(p.getCorreo());
-                    ventana.panelMenu.cNumero.setText(p.getNumero());
-                    ventana.panelMenu.cMembresia.setText(p.getMembresia());
-
-                    // Hacer los campos no editables
-                    ventana.panelMenu.cNombre.setEditable(false);
-                    ventana.panelMenu.cApellido.setEditable(false);
-                    ventana.panelMenu.cCedula.setEditable(false);
-                    ventana.panelMenu.cCorreo.setEditable(false);
-                    ventana.panelMenu.cNumero.setEditable(false);
-                    ventana.panelMenu.cMembresia.setEditable(false);
+                    mostrarPanel(p);
+                } else {
+                    String mensaje = logica.getUltimoMensajeLogin();
+                    if (mensaje == null || mensaje.isBlank()) {
+                        mensaje = "Error en el inicio de sesión.";
+                    }
+                    ventana.mostrarMensajeDialogo(ventana, mensaje);
                 }
                 break;
 

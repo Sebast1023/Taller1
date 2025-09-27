@@ -29,6 +29,8 @@ public class Usuario extends Persona {
 
     /** Lista de vehículos registrados por el usuario */
     private ArrayList<Vehiculo> vehiculos;
+    // bandera para saber si el usuario esta activo o aprovado
+    private boolean activo;
 
     /** Indica si el usuario fue aprobado por un administrador */
     private boolean aprobado;

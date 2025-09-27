@@ -3,6 +3,7 @@ package udistrital.avanzada.taller1.control;
 import java.util.ArrayList;
 import udistrital.avanzada.taller1.modelo.Persona;
 import udistrital.avanzada.taller1.modelo.Usuario;
+import udistrital.avanzada.taller1.modelo.Vehiculo;
 
 /**
  * Controlador encargado de manejar las operaciones generales
