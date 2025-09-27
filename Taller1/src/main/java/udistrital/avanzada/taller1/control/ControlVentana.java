@@ -3,7 +3,6 @@ package udistrital.avanzada.taller1.control;
 import udistrital.avanzada.taller1.vista.Ventana;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JOptionPane;
 import udistrital.avanzada.taller1.modelo.Persona;
 
 /**
@@ -168,7 +167,7 @@ public class ControlVentana implements ActionListener {
                     ventana.panelMenu.cMembresia.setEditable(false);
                 } 
                 else {
-                    JOptionPane.showMessageDialog(ventana, "Usuario o contraseña incorrectos");
+                    ventana.mostrarMensajeDialogo(ventana, "Usuario o contraseña incorrectos");
                 }
                 break;
 
