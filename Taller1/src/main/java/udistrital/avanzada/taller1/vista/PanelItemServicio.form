@@ -116,7 +116,7 @@
                               <Group type="102" attributes="0">
                                   <Component id="lPrecio" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="lCantidad" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lDuracion" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jScrollPane5" pref="142" max="32767" attributes="0"/>
                               <Component id="jLabel4" alignment="0" max="32767" attributes="0"/>
@@ -136,9 +136,9 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="lId" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="lNombre" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
@@ -147,7 +147,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lPrecio" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lCantidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lDuracion" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                       <Component id="lCreador" min="-2" max="-2" attributes="0"/>
@@ -198,9 +198,9 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="lCantidad">
+    <Component class="javax.swing.JLabel" name="lDuracion">
       <Properties>
-        <Property name="text" type="java.lang.String" value="cantidad"/>
+        <Property name="text" type="java.lang.String" value="Duracion"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>

@@ -8,12 +8,12 @@ package udistrital.avanzada.taller1.vista;
  *
  * @author mauri
  */
-public class PanelItemProducto extends javax.swing.JPanel {
+public class PanelItemInsumo extends javax.swing.JPanel {
 
     /**
      * Creates new form PanelItemProducto
      */
-    public PanelItemProducto() {
+    public PanelItemInsumo() {
         initComponents();
         txtDescripcion.setEditable(false);
     }
@@ -87,7 +87,7 @@ public class PanelItemProducto extends javax.swing.JPanel {
             }
         });
 
-        lCantidad.setText("cantidad");
+        lCantidad.setText("Cantidad");
 
         txtDescripcion.setColumns(10);
         txtDescripcion.setRows(3);

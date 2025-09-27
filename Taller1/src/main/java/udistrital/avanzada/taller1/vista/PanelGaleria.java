@@ -23,9 +23,13 @@ public class PanelGaleria extends javax.swing.JPanel {
      */
     public PanelGaleria() {
         initComponents(); 
+        // dejar que el scroll vertical sea infinito
         scrollListaProductos.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+        // no permitir el scroll horizontal
         scrollListaProductos.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        // velocida del scroll
         scrollListaProductos.getVerticalScrollBar().setUnitIncrement(20);
+        // para que los elementos se apilen
         panelContenido.setLayout(new BoxLayout(panelContenido, BoxLayout.Y_AXIS));
     }
 
@@ -108,8 +112,36 @@ public class PanelGaleria extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
     
-    public void agregarProductoALista(String nombre,String descripcion ,String cantidad, String precio, String id, String creador, String imagen){
-        PanelItemProducto aux = new PanelItemProducto();
+    public void mostrarInsumoEnLista(String nombre,String descripcion ,String duracion, String precio, String id, String creador, String imagen){
+        PanelItemServicio aux = new PanelItemServicio();
+        aux.lDuracion.setText("Duracion "+duracion +" min");
+        aux.txtDescripcion.setText(descripcion);
+        aux.lNombre.setText(nombre);
+        aux.lPrecio.setText(precio);
+        aux.lId.setText("ID "+id);
+        aux.lCreador.setText("Por "+creador);
+        // verificar url
+        URL url = getClass().getResource(imagen);
+        // si exite entonces poner la imagen
+        if (url != null) {
+            ImageIcon icon = new ImageIcon(url);
+            aux.bImagen.setIcon(icon);      
+        }
+        // agergar el item al panel donde se mostraraa
+        panelContenido.add(aux);
+        // separador visual
+        JSeparator separador = new JSeparator(SwingConstants.HORIZONTAL);
+        // linea delgada y horizontal
+        separador.setMaximumSize(new Dimension(Integer.MAX_VALUE, 1)); // para que se estire
+        // agregar separador
+        panelContenido.add(separador);
+        // Recalcula el layout para que se muestren los objetos
+        panelContenido.revalidate(); 
+        panelContenido.repaint(); 
+    }
+    
+    public void mostrarServicioALista(String nombre,String descripcion ,String cantidad, String precio, String id, String creador, String imagen){
+        PanelItemInsumo aux = new PanelItemInsumo();
         aux.lCantidad.setText("Hay "+cantidad);
         aux.txtDescripcion.setText(descripcion);
         aux.lNombre.setText(nombre);
@@ -139,10 +171,6 @@ public class PanelGaleria extends javax.swing.JPanel {
     
     private void bBuscarItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBuscarItemActionPerformed
         // TODO add your handling code here:
-        for (int i = 0; i < 2; i++) {
-            agregarProductoALista("no","nsi","123","kk","no","nsi","123");
-            
-        }
     }//GEN-LAST:event_bBuscarItemActionPerformed
     
 
