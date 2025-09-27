@@ -18,23 +18,23 @@ import udistrital.avanzada.taller1.modelo.Vehiculo;
  * </p>
  * 
  * @author Diego
- * @version 1.1
- * @date 26/09/2025
+ * @version 1.2
+ * @date 27/09/2025
  */
 
-/* Fecha de Modificación: 26/09/2025
+/* Fecha de Modificación: 27/09/2025
  * Modificado por: Diego
  * Descripción de la modificación:
- *    - Se actualizaron los métodos "crearVehiculo" y "modificarVehiculo" 
- *      para reflejar el cambio de tipos de datos a String en los atributos "ano" y "potencia".
- *    - Se eliminaron referencias al atributo "carga" en el constructor y métodos.
+ *    - Se añadió el parámetro "tipoVehiculo" al método crearVehiculo,
+ *      para reflejar la actualización del constructor en la clase Vehiculo.
+ *    - Se actualizó la documentación para describir el nuevo parámetro.
  */
 
 public class ControlVehiculo {
     private ArrayList<Vehiculo> vehiculos;
 
     
-    // Constructor: inicializa la lista de vehículos
+    // Constructor: Inicializa la lista de vehículos
      
     public ControlVehiculo() {
         this.vehiculos = new ArrayList<>();
@@ -48,13 +48,15 @@ public class ControlVehiculo {
      * @param ano año de fabricación
      * @param potencia potencia del motor
      * @param color color del vehículo
+     * @param tipoVehiculo tipo de vehículo (Moto, Scooter, Auto, etc.)
      * @param placa placa única (no se puede repetir)
      * @param usuario usuario propietario del vehículo
      */
-    public void crearVehiculo(String marca, String modelo, String ano, String potencia, String color, String placa, Usuario usuario) {
+    public void crearVehiculo(String marca, String modelo, String ano, String potencia, 
+                              String color, String tipoVehiculo, String placa, Usuario usuario) {
         // Validamos que no exista ya un vehículo con la misma placa
         if (buscarVehiculo(placa) == null) {
-            Vehiculo vehiculo = new Vehiculo(marca, modelo, ano, potencia, color, placa, usuario);
+            Vehiculo vehiculo = new Vehiculo(marca, modelo, ano, potencia, color, tipoVehiculo, placa, usuario);
             vehiculos.add(vehiculo);
         } else {
             System.out.println("Error: ya existe un vehículo con la placa " + placa);
@@ -86,7 +88,8 @@ public class ControlVehiculo {
      * @param nuevaPotencia nueva potencia
      * @param nuevoColor nuevo color
      */
-    public void modificarVehiculo(String placa, String nuevaMarca, String nuevoModelo, String nuevoAno, String nuevaPotencia, String nuevoColor) {
+    public void modificarVehiculo(String placa, String nuevaMarca, String nuevoModelo, 
+                                  String nuevoAno, String nuevaPotencia, String nuevoColor) {
         Vehiculo vehiculo = buscarVehiculo(placa);
         if (vehiculo != null) {
             vehiculo.setMarca(nuevaMarca);
