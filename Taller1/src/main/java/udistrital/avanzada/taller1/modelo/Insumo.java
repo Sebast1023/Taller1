@@ -4,7 +4,7 @@
  */
 package udistrital.avanzada.taller1.modelo;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  * @author mauricio
@@ -23,9 +23,10 @@ public class Insumo extends Item {
      * @param visibidad
      * @param disponibidad cantidad en existencias del insumo
      * @param proveedor
-     * @param id 
+     * @param id
+     * @param imagen
      */
-    public Insumo(String nombre, String descripcion, double precio, Date fechaCreacion, boolean visibidad, int disponibidad, Proveedor proveedor, int id, String imagen) {
+    public Insumo(String nombre, String descripcion, double precio, LocalDate fechaCreacion, boolean visibidad, int disponibidad, Proveedor proveedor, int id, String imagen) {
         super(nombre, descripcion, precio, fechaCreacion, visibidad, proveedor, id, imagen);
         this.disponibidad = disponibidad;
     }

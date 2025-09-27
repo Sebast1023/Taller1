@@ -4,7 +4,7 @@
  */
 package udistrital.avanzada.taller1.modelo;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  * @author mauricio
@@ -26,7 +26,7 @@ public class Servicio extends Item{
      * @param id
      * @param imagen 
      */
-    public Servicio(String nombre, String descripcion, double precio, Date fechaCreacion, boolean visibidad, int duracion, Proveedor proveedor, int id, String imagen) {
+    public Servicio(String nombre, String descripcion, double precio, LocalDate fechaCreacion, boolean visibidad, int duracion, Proveedor proveedor, int id, String imagen) {
         super(nombre, descripcion, precio, fechaCreacion, visibidad, proveedor, id, imagen);
         this.duracion = duracion;
     }
