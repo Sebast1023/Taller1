@@ -14,8 +14,8 @@ package udistrital.avanzada.taller1.modelo;
  * version 1.1
  * date 23/09/2025
  * 
- * @modified Diego
- * @modificationDate 27/09/2025
+ * modified Diego
+ * modificationDate 27/09/2025
  * Se agregaron métodos para:
  * - obtener el rol de la persona (getRol)
  * - sobrescribir toString() para una descripción legible

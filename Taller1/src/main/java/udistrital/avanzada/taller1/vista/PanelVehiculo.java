@@ -6,8 +6,8 @@ package udistrital.avanzada.taller1.vista;
 
 /**
  *
- * @author sebas
- * @date 26/09/2025
+ * author sebas
+ * date 26/09/2025
  */
 public class PanelVehiculo extends javax.swing.JPanel {
 

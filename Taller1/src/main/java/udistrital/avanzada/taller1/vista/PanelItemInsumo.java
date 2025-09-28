@@ -6,7 +6,7 @@ package udistrital.avanzada.taller1.vista;
 
 /**
  *
- * @author mauri
+ * author mauri
  */
 public class PanelItemInsumo extends javax.swing.JPanel {
 
@@ -129,9 +129,9 @@ public class PanelItemInsumo extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(11, 11, 11)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lNombre)
-                    .addComponent(lId))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lId, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lNombre))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()

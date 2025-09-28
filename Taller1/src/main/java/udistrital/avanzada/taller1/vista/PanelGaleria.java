@@ -14,7 +14,7 @@ import javax.swing.SwingConstants;
 
 /**
  *
- * @author mauri
+ * author mauri
  */
 public class PanelGaleria extends javax.swing.JPanel {
 

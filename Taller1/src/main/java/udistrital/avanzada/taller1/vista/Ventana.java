@@ -14,8 +14,8 @@ import javax.swing.JPanel;
  * Se hace uso de un CardLayout para manejar diferentes paneles de la interfaz
  * gráfica.
  * 
- * @author sebas
- * @date 23/09/2025
+ * author sebas
+ * date 23/09/2025
  */
 public class Ventana extends JFrame {
 

@@ -6,7 +6,7 @@ package udistrital.avanzada.taller1.vista;
 
 /**
  *
- * @author mauri
+ * author mauri
  */
 public class PanelServicio extends javax.swing.JPanel {
 
