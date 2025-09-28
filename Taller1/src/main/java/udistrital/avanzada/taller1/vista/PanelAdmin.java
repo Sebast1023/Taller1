@@ -233,7 +233,7 @@ public class PanelAdmin extends javax.swing.JPanel {
         );
 
         bAtras.setText("Atras");
-        bAtras.setActionCommand("Atras");
+        bAtras.setActionCommand("AtrasAdmin");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -277,17 +277,17 @@ public class PanelAdmin extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton bAtras;
     public javax.swing.JButton bCrearInsumo;
-    private javax.swing.JButton bInsumos;
-    private javax.swing.JButton bServicios;
-    private javax.swing.JTextField cApellido;
-    private javax.swing.JTextField cCedula;
-    private javax.swing.JTextField cContrasena;
-    private javax.swing.JTextField cCorreo;
-    private javax.swing.JTextField cEmpresa;
-    private javax.swing.JTextField cMembresia;
-    private javax.swing.JTextField cNit;
-    private javax.swing.JTextField cNombre;
-    private javax.swing.JTextField cNumero;
+    public javax.swing.JButton bInsumos;
+    public javax.swing.JButton bServicios;
+    public javax.swing.JTextField cApellido;
+    public javax.swing.JTextField cCedula;
+    public javax.swing.JTextField cContrasena;
+    public javax.swing.JTextField cCorreo;
+    public javax.swing.JTextField cEmpresa;
+    public javax.swing.JTextField cMembresia;
+    public javax.swing.JTextField cNit;
+    public javax.swing.JTextField cNombre;
+    public javax.swing.JTextField cNumero;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
