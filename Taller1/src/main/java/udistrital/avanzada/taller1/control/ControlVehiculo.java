@@ -59,7 +59,7 @@ public class ControlVehiculo {
             Vehiculo vehiculo = new Vehiculo(marca, modelo, ano, potencia, color, tipoVehiculo, placa, usuario);
             vehiculos.add(vehiculo);
         } else {
-            System.out.println("Error: ya existe un vehículo con la placa " + placa);
+          
         }
     }
 
@@ -98,7 +98,7 @@ public class ControlVehiculo {
             vehiculo.setPotencia(nuevaPotencia);
             vehiculo.setColor(nuevoColor);
         } else {
-            System.out.println("Error: no se encontró vehículo con placa " + placa);
+           
         }
     }
 
@@ -112,7 +112,7 @@ public class ControlVehiculo {
         if (vehiculo != null) {
             vehiculos.remove(vehiculo);
         } else {
-            System.out.println("Error: no se encontró vehículo con placa " + placa);
+       
         }
     }
 

@@ -69,8 +69,8 @@ public class PanelMenu extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(221, 204, 99));
 
-        bVehiculos.setText("Vehiculos");
         bVehiculos.setActionCommand("Vehiculos");
+        bVehiculos.setLabel("Vehiculo");
 
         jButton1.setText("Servicios y Eventos");
 
@@ -94,6 +94,8 @@ public class PanelMenu extends javax.swing.JPanel {
                     .addComponent(jButton1))
                 .addContainerGap())
         );
+
+        bVehiculos.getAccessibleContext().setAccessibleName("Vehiculo");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

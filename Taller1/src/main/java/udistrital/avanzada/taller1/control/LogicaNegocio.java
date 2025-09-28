@@ -116,10 +116,10 @@ public class LogicaNegocio {
             controlAdministrador.agregarAdministrador(admin);
             controlPersona.getPersonas().add(admin);
 
-            System.out.println("✅ Administrador predeterminado creado correctamente.");
-            System.out.println("   Cédula: " + cedula + " | Contraseña: " + contraseña);
+            
+            
         } else {
-            System.out.println("ℹ️ El administrador predeterminado ya existe.");
+           
         }
     }
 }

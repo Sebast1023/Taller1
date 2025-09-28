@@ -104,6 +104,8 @@ public class PanelVehiculos extends javax.swing.JPanel {
         panelContenido = new javax.swing.JPanel();
         bCrearInsumo = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(243, 229, 139));
+
         jLabel1.setText("Mis Vehiculos");
 
         javax.swing.GroupLayout panelContenidoLayout = new javax.swing.GroupLayout(panelContenido);

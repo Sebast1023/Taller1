@@ -40,6 +40,11 @@ public class PanelAceptarUsuario extends javax.swing.JPanel {
 
         bAceptar.setText("Aceptar");
         bAceptar.setActionCommand("Aceptar");
+        bAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bAceptarActionPerformed(evt);
+            }
+        });
 
         bCerrarSesion.setText("Cerrar sesion");
         bCerrarSesion.setActionCommand("CerrarSesion");
@@ -93,7 +98,13 @@ public class PanelAceptarUsuario extends javax.swing.JPanel {
                 .addComponent(bCerrarSesion)
                 .addGap(14, 14, 14))
         );
+
+        bAceptar.getAccessibleContext().setAccessibleDescription("");
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAceptarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bAceptarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

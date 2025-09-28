@@ -93,7 +93,7 @@ public class ControlAdministrador {
         if (admin != null) {
             admin.addPost(publicacion);
         } else {
-            System.out.println("Error: administrador no encontrado");
+            
         }
     }
     
@@ -108,7 +108,7 @@ public class ControlAdministrador {
         if (admin != null) {
             admin.delPost(publicacion);
         } else {
-            System.out.println("Error: administrador no encontrado");
+            
         }
     }
 

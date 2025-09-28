@@ -296,6 +296,7 @@ public class ControlVentana implements ActionListener {
                 break;   
              
             case "Scooter":
+                
             case "Moto":
                 ventana.mostrarPanel("LOGIN_PANEL");
                 limpiarCampos();
