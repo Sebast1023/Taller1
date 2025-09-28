@@ -283,9 +283,6 @@
     <Component class="javax.swing.JButton" name="bBorrar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Borrar"/>
-        <Property name="actionCommand" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="&quot;BorraVehiculo&quot;" type="code"/>
-        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bBorrarActionPerformed"/>
@@ -297,9 +294,6 @@
     <Component class="javax.swing.JButton" name="bEditar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Editar"/>
-        <Property name="actionCommand" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="&quot;EditarVehiculo&quot;" type="code"/>
-        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bEditarActionPerformed"/>

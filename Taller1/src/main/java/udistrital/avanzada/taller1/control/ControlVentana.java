@@ -191,7 +191,7 @@ public class ControlVentana implements ActionListener {
                 break;
         }
     }
-
+    
     /**
      * Responde a los eventos generados por los botones de la interfaz.
      * 
@@ -284,9 +284,12 @@ public class ControlVentana implements ActionListener {
                 break;
 
             case "Vehiculos":
-                ventana.mostrarPanel("VEHICULO_PANEL");
+                ventana.mostrarPanel("PANEL_VEHICULOS_USUARIO");
                 break;
-
+            case "Vehiculo":
+                ventana.mostrarPanel("VEHICULO_PANEL");
+                break;   
+             
             case "Scooter":
             case "Moto":
                 ventana.mostrarPanel("LOGIN_PANEL");
@@ -302,7 +305,7 @@ public class ControlVentana implements ActionListener {
                 break;
             case "ActualizarListaVehiculosUsuario":
                 // repintar la interfaz
-                break;
+                break;             
             // comando subespecializado
             case "BorrarVehiculo":
                 String vehiculoABorrar = comandosubespecializado[1];                

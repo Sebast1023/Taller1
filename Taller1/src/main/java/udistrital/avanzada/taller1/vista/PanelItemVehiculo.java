@@ -103,7 +103,6 @@ public class PanelItemVehiculo extends javax.swing.JPanel {
         lAño.setText("Año");
 
         bBorrar.setText("Borrar");
-        bBorrar.setActionCommand("BorraVehiculo");
         bBorrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bBorrarActionPerformed(evt);
@@ -111,7 +110,6 @@ public class PanelItemVehiculo extends javax.swing.JPanel {
         });
 
         bEditar.setText("Editar");
-        bEditar.setActionCommand("EditarVehiculo");
         bEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bEditarActionPerformed(evt);
