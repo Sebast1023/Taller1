@@ -12,9 +12,9 @@ import udistrital.avanzada.taller1.modelo.Vehiculo;
  * de información de proveedores y servicios disponibles.
  * </p>
  * 
- * @author diego
- * @version 1.0
- * @date 27/09/2025
+ * author diego
+ * version 1.0
+ * date 27/09/2025
  */
 public class ControlUsuario {
 

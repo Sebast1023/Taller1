@@ -14,7 +14,7 @@ import udistrital.avanzada.taller1.modelo.Servicio;
 
 /**
  *
- * @author mauri
+ * author mauri
  */
 public class ServicioProveedor {
     public void agregarItem(Item item, Persona creador){ 

@@ -10,7 +10,7 @@ import udistrital.avanzada.taller1.modelo.Vehiculo;
 
 /**
  *
- * @author mauri
+ * author mauri
  */
 public class ServicioUsuario {
     /**

@@ -15,10 +15,10 @@ import udistrital.avanzada.taller1.modelo.Usuario;
  * comunicarse con la capa lógica para operaciones como el inicio de sesión o el
  * registro de usuarios.
  *
- * @author Diego
- * @author sebas
- * @version 1.2
- * @date 23/09/2025
+ * author Diego
+ * author sebas
+ * version 1.2
+ * date 23/09/2025
  */
 
 /* Fecha de Modificación: 27/09/2025

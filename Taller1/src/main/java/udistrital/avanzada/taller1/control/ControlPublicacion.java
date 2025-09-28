@@ -7,7 +7,7 @@ import udistrital.avanzada.taller1.modelo.Publicacion;
 import udistrital.avanzada.taller1.modelo.Publicador;
 
 /**
- * @author mauricio
+ * author mauricio
  * 25/9/2025
  * Clase que maneja los objetos tipo Publicacion dentro del sistema
  */

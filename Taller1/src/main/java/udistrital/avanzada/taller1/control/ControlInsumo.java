@@ -9,7 +9,7 @@ import udistrital.avanzada.taller1.modelo.Insumo;
 
 /**
  *
- * @author mauricio
+ * author mauricio
  */
 public class ControlInsumo {
     /**

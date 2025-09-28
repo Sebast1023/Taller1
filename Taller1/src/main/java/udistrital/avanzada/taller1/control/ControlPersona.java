@@ -13,9 +13,9 @@ import udistrital.avanzada.taller1.modelo.Vehiculo;
  * Su responsabilidad principal es validar inicios de sesión y 
  * almacenar las personas registradas.
  * 
- * @author mauricio
- * @version 1.0
- * @date 25/09/2025
+ * author mauricio
+ * version 1.0
+ * date 25/09/2025
  */
 
 /* Fecha de Modificacion: 27/09/2025
