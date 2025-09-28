@@ -26,6 +26,7 @@ public class Ventana extends JFrame {
     public PanelVehiculo panelVehiculo;
     public PanelMenu panelMenu;
     public PanelAdmin panelAdmin;
+    public PanelVehiculos panelVehiculos;
     
     /**
      * Constructor de la clase ventana.
@@ -54,6 +55,7 @@ public class Ventana extends JFrame {
         panelVehiculo = new PanelVehiculo();
         panelMenu = new PanelMenu();
         panelAdmin = new PanelAdmin();
+        panelVehiculos = new PanelVehiculos();
         
         //Se añaden los paneles al panel principal con un texto identificador.
         panelPrincipal.add(panelLogin, "LOGIN_PANEL");
@@ -61,6 +63,7 @@ public class Ventana extends JFrame {
         panelPrincipal.add(panelVehiculo, "VEHICULO_PANEL");
         panelPrincipal.add(panelMenu, "MENU_PANEL");
         panelPrincipal.add(panelAdmin, "ADMIN_PANEL");
+        panelPrincipal.add(panelVehiculos, "PANEL_VEHICULOS_USUARIO");
         
         //Se agrega el panel principal al JFrame.
         this.add(panelPrincipal);
