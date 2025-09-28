@@ -1,10 +1,12 @@
 package udistrital.avanzada.taller1.control;
 
+import java.awt.Component;
 import udistrital.avanzada.taller1.vista.Ventana;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import udistrital.avanzada.taller1.modelo.Persona;
 import udistrital.avanzada.taller1.modelo.Usuario;
+import udistrital.avanzada.taller1.vista.PanelItemVehiculo;
 
 /**
  * Clase ControlVentana
@@ -104,6 +106,13 @@ public class ControlVentana implements ActionListener {
         ventana.panelMenu.bSalir.addActionListener(this);
         ventana.panelMenu.bVehiculos.addActionListener(this);
         ventana.panelVehiculo.bAtras.addActionListener(this);
+        // eventos a tarjetas de vehiculo
+        for (Component comp : ventana.panelVehiculos.panelContenido.getComponents()) {
+            if (comp instanceof PanelItemVehiculo panelItemVehiculo) {
+                panelItemVehiculo.bBorrar.addActionListener(this);
+                panelItemVehiculo.bEditar.addActionListener(this);
+            }
+        }
         
         ventana.setVisible(true);
     }
@@ -184,7 +193,7 @@ public class ControlVentana implements ActionListener {
                 break;
         }
     }
-
+    
     /**
      * Responde a los eventos generados por los botones de la interfaz.
      * 
@@ -207,6 +216,27 @@ public class ControlVentana implements ActionListener {
         }
 
         String cmd = e.getActionCommand();
+        /**
+         * el comado subespecializado nos dice que hay una accion
+         * con un dato que es un identificador unico o como lo definan
+         * en la implementacion.
+         * primero las palabras del comando pegadas y separadas
+         * del dato por un guion "-"
+         * Ejemplo: EditarCarro-1
+         * Comando EidtarCarro y 1 en este caso el id del carro a editar
+         */        
+        String[] comandosubespecializado = {"",""};
+        if(cmd.contains("-")){
+            // guardamos la informacion del comando
+            comandosubespecializado = cmd.split("-");
+            // si hay mas de dos elementos significa que el comando esta bien hecho
+            if(comandosubespecializado.length > 1){
+                // el comando se asigna, siempre estara en la primera posicion            
+                cmd = comandosubespecializado[0];
+            }
+            
+        }
+        
         switch (cmd) {
             case "Registrese":
                 ventana.mostrarPanel("REGISTRO_PANEL");
@@ -256,9 +286,12 @@ public class ControlVentana implements ActionListener {
                 break;
 
             case "Vehiculos":
-                ventana.mostrarPanel("VEHICULO_PANEL");
+                ventana.mostrarPanel("PANEL_VEHICULOS_USUARIO");
                 break;
-
+            case "Vehiculo":
+                ventana.mostrarPanel("VEHICULO_PANEL");
+                break;   
+             
             case "Scooter":
             case "Moto":
                 ventana.mostrarPanel("LOGIN_PANEL");
@@ -272,6 +305,17 @@ public class ControlVentana implements ActionListener {
             case "Atras":
                 ventana.mostrarPanel("MENU_PANEL");
                 break;
+            case "ActualizarListaVehiculosUsuario":
+                // repintar la interfaz
+                break;             
+            // comando subespecializado
+            case "BorrarVehiculo":
+                String vehiculoABorrar = comandosubespecializado[1];                
+                break;
+            case "EditarVehiculo":
+                String vehiculoAEditar = comandosubespecializado[1];                
+                break;
+             
         }
     }
 }

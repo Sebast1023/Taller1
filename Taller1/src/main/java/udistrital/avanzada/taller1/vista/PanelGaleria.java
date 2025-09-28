@@ -30,7 +30,7 @@ public class PanelGaleria extends javax.swing.JPanel {
         // velocida del scroll
         scrollListaProductos.getVerticalScrollBar().setUnitIncrement(20);
         // para que los elementos se apilen
-        panelContenido.setLayout(new BoxLayout(panelContenido, BoxLayout.Y_AXIS));
+        panelContenido.setLayout(new BoxLayout(panelContenido, BoxLayout.Y_AXIS));        
     }
 
     /**
@@ -111,7 +111,16 @@ public class PanelGaleria extends javax.swing.JPanel {
                 .addContainerGap(18, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-    
+    /**
+     * metodo para mostrar insumos en la lista
+     * @param nombre
+     * @param descripcion
+     * @param duracion
+     * @param precio
+     * @param id
+     * @param creador
+     * @param imagen 
+     */
     public void mostrarInsumoEnLista(String nombre,String descripcion ,String duracion, String precio, String id, String creador, String imagen){
         PanelItemServicio aux = new PanelItemServicio();
         aux.lDuracion.setText("Duracion "+duracion +" min");
@@ -139,31 +148,42 @@ public class PanelGaleria extends javax.swing.JPanel {
         panelContenido.revalidate(); 
         panelContenido.repaint(); 
     }
-    
+    /**
+     * metodo para ver servicios en la lista
+     * @param nombre
+     * @param descripcion
+     * @param cantidad
+     * @param precio
+     * @param id
+     * @param creador
+     * @param imagen 
+     */
     public void mostrarServicioALista(String nombre,String descripcion ,String cantidad, String precio, String id, String creador, String imagen){
         PanelItemInsumo aux = new PanelItemInsumo();
+        // Poner valores a mostrar
         aux.lCantidad.setText("Hay "+cantidad);
         aux.txtDescripcion.setText(descripcion);
         aux.lNombre.setText(nombre);
         aux.lPrecio.setText(precio);
         aux.lId.setText("ID "+id);
         aux.lCreador.setText("Por "+creador);
-        
+        //comprobar que la imagen esta
         URL url = getClass().getResource(imagen);
         if (url != null) {
             ImageIcon icon = new ImageIcon(url);
             aux.bImagen.setIcon(icon);      
         }
-        
+        //agregar al panel contenido
         panelContenido.add(aux);
+        // linea separadora
         JSeparator separador = new JSeparator(SwingConstants.HORIZONTAL);
-        separador.setMaximumSize(new Dimension(Integer.MAX_VALUE, 1)); // para que se estire
+        separador.setMaximumSize(new Dimension(Integer.MAX_VALUE, 1));
         panelContenido.add(separador);
         panelContenido.revalidate(); // Recalcula el layout
         panelContenido.repaint(); 
     }
-    
-    private void limpiarPanelContenido() {
+    // para limpiar la lista de items
+    public void limpiarPanelContenido() {
         panelContenido.removeAll();
         panelContenido.revalidate();
         panelContenido.repaint();
