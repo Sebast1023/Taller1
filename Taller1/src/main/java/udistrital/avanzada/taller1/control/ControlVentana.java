@@ -106,6 +106,9 @@ public class ControlVentana implements ActionListener {
         ventana.panelMenu.bSalir.addActionListener(this);
         ventana.panelMenu.bVehiculos.addActionListener(this);
         ventana.panelVehiculo.bAtras.addActionListener(this);
+        ventana.panelRegistro.bAtras.addActionListener(this);
+        ventana.panelVehiculo.bAtras.addActionListener(this);
+        ventana.panelServicio.bAtras.addActionListener(this);
         // eventos a tarjetas de vehiculo
         for (Component comp : ventana.panelVehiculos.panelContenido.getComponents()) {
             if (comp instanceof PanelItemVehiculo panelItemVehiculo) {
@@ -315,7 +318,15 @@ public class ControlVentana implements ActionListener {
             case "EditarVehiculo":
                 String vehiculoAEditar = comandosubespecializado[1];                
                 break;
-             
+            case "AtrasRegistro":
+                ventana.mostrarPanel("LOGIN_PANEL");
+                break;
+            case "AtrasVehiculo":
+                ventana.mostrarPanel("MENU_PANEL");
+                break;
+            case "AtrasServicio":
+                ventana.mostrarPanel("MENU_PANEL");
+                break;
         }
     }
 }

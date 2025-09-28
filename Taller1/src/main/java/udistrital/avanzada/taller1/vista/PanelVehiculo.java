@@ -96,7 +96,7 @@ public class PanelVehiculo extends javax.swing.JPanel {
         );
 
         bAtras.setText("Atras");
-        bAtras.setActionCommand("Atras");
+        bAtras.setActionCommand("AtrasVehiculo");
 
         bCrearInsumo.setText("Crear");
         bCrearInsumo.setActionCommand("CrearInsumo");
