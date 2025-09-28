@@ -88,7 +88,9 @@ public class ControlVentana implements ActionListener {
     public ControlVentana(LogicaNegocio logica) {
         this.logica = logica;
         ventana = new Ventana("ROLA PET");
-        ventana.setSize(400, 350);
+        ventana.pack(); // Ajusta la ventana al tamaño de sus componentes
+        ventana.setLocationRelativeTo(null); // Centra la ventana en la pantalla
+        ventana.setVisible(true); // Siempre después de pack()
         ventana.setResizable(false);
         ventana.setLocationRelativeTo(null);
         
