@@ -3,8 +3,8 @@ package udistrital.avanzada.taller1.modelo;
 import java.util.ArrayList;
 
 /**
- * @author mauricio
- * @date 23/09/2025
+ * author mauricio
+ * date 23/09/2025
  * 
  * Clase que representa a un Administrador dentro del sistema.
  * 

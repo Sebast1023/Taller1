@@ -3,7 +3,7 @@ package udistrital.avanzada.taller1.modelo;
 import java.time.LocalDate;
 
 /**
- * @author mauricio
+ * author mauricio
  * 23/9/2025
  * La clase es para que tanto Administrador como Proveedor publiquen post 
  * de eventos, promociones u otros

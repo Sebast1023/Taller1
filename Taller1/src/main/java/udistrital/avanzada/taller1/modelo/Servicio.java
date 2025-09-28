@@ -7,7 +7,7 @@ package udistrital.avanzada.taller1.modelo;
 import java.time.LocalDate;
 
 /**
- * @author mauricio
+ * author mauricio
  * 24/9/2025
  * Clase de servicio para los Proveedores tipo servicio
  */

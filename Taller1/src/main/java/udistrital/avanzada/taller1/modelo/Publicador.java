@@ -3,7 +3,7 @@ package udistrital.avanzada.taller1.modelo;
 import java.util.ArrayList;
 
 /**
- * @author mauricio
+ * author mauricio
  * 25/9/2025
  * La interfaz Publicador es para que clases que puedan hacer post o
  * publicaciones tengan metodos comunes para agregar y quitar post 

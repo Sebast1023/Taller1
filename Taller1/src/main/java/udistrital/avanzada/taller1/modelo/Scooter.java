@@ -13,9 +13,9 @@ package udistrital.avanzada.taller1.modelo;
  * sistema, ya que se trata de un vehículo motorizado y no de una patineta manual.
  * </p>
  * 
- * @author Diego
- * @version 1.2
- * @date 27/09/2025
+ * author Diego
+ * version 1.2
+ * date 27/09/2025
  */
 
 /* Fecha de Modificación: 27/09/2025

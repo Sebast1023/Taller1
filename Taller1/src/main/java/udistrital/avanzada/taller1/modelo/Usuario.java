@@ -13,14 +13,14 @@ import java.util.ArrayList;
  * Cumple con el principio de sustitución de Liskov (LSP), ya que puede
  * ser tratado como una Persona en cualquier contexto.
  * 
- * @author mauricio
- * @version 1.1
- * @date 23/09/2025
+ * author mauricio
+ * version 1.1
+ * date 23/09/2025
  * 
  * 
- * @modifiedBy Diego – Se agregó el atributo aprobado, sus métodos,
+ * modifiedBy Diego – Se agregó el atributo aprobado, sus métodos,
  *                  y se mejoró la documentación de la clase.
- * @date 27/09/2025
+ * date 27/09/2025
  */
 public class Usuario extends Persona {
 

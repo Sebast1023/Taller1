@@ -10,9 +10,9 @@ package udistrital.avanzada.taller1.modelo;
  * Proporciona atributos y métodos comunes a todas las personas,
  * así como operaciones generales como autenticación y representación textual.
  * 
- * @author mauricio
- * @version 1.1
- * @date 23/09/2025
+ * author mauricio
+ * version 1.1
+ * date 23/09/2025
  * 
  * @modified Diego
  * @modificationDate 27/09/2025
