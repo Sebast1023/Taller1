@@ -45,7 +45,7 @@ public class Scooter extends Vehiculo {
      */
     public Scooter(String marca, String modelo, String ano, String potencia, 
                    String color, String tipoVehiculo, String placa, Usuario usuario) {
-        super(marca, modelo, ano, potencia, color, tipoVehiculo, placa, usuario);
+        super(marca, modelo, ano, potencia, color, tipoVehiculo, placa, usuario,"/udistrital/avanzada/taller1/vista/Scooter.png");
     }
 
     /**

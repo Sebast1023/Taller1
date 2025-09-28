@@ -111,4 +111,8 @@ public class ControlUsuario {
     public ArrayList<Usuario> getUsuarios() {
         return usuarios;
     }
+    
+    public ArrayList<Vehiculo> getVehiculos(Usuario usuario) {        
+        return usuario.getVehiculos();
+    }
 }

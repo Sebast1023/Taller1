@@ -4,8 +4,10 @@ import java.awt.Component;
 import udistrital.avanzada.taller1.vista.Ventana;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import udistrital.avanzada.taller1.modelo.Persona;
 import udistrital.avanzada.taller1.modelo.Usuario;
+import udistrital.avanzada.taller1.modelo.Vehiculo;
 import udistrital.avanzada.taller1.vista.PanelItemVehiculo;
 
 /**
@@ -107,16 +109,10 @@ public class ControlVentana implements ActionListener {
         ventana.panelMenu.bVehiculos.addActionListener(this);
         ventana.panelVehiculo.bAtras.addActionListener(this);
         ventana.panelRegistro.bAtras.addActionListener(this);
-        ventana.panelVehiculo.bAtras.addActionListener(this);
+        ventana.panelVehiculos.bBuscarVehiculos.addActionListener(this);
         ventana.panelServicio.bAtras.addActionListener(this);
-        // eventos a tarjetas de vehiculo
-        for (Component comp : ventana.panelVehiculos.panelContenido.getComponents()) {
-            if (comp instanceof PanelItemVehiculo panelItemVehiculo) {
-                panelItemVehiculo.bBorrar.addActionListener(this);
-                panelItemVehiculo.bEditar.addActionListener(this);
-            }
-        }
-        
+        ventana.panelAceptar.bCerrarSesion.addActionListener(this);
+        ventana.panelAdmin.bAtras.addActionListener(this);        
         ventana.setVisible(true);
     }
 
@@ -290,6 +286,7 @@ public class ControlVentana implements ActionListener {
 
             case "Vehiculos":
                 ventana.mostrarPanel("PANEL_VEHICULOS_USUARIO");
+                mostrarPanelVehiculosUsuario();
                 break;
             case "Vehiculo":
                 ventana.mostrarPanel("VEHICULO_PANEL");
@@ -328,6 +325,27 @@ public class ControlVentana implements ActionListener {
             case "AtrasServicio":
                 ventana.mostrarPanel("MENU_PANEL");
                 break;
+            case "CerrarSesion":
+                ventana.mostrarPanel("LOGIN_PANEL");
+                break;
+            case "AtrasAdmin":
+                ventana.mostrarPanel("ACEPTAR_USUARIOS");
+                break;
         }
     }
+    public void mostrarPanelVehiculosUsuario() {
+        ArrayList<Vehiculo> vehiculos = logica.getVehiculosUsuario();
+        if(vehiculos == null){return;}        
+        ventana.mostrarPanel("PANEL_VEHICULOS_USUARIO");        
+        for (Vehiculo vehiculo : vehiculos) {
+            ventana.panelVehiculos.mostrarVehiculoEnLista(vehiculo.getMarca(), vehiculo.getModelo(), vehiculo.getAno(), vehiculo.getPotencia(), vehiculo.getColor(), vehiculo.getTipoVehiculo(), vehiculo.getPlaca(), vehiculo.getImagen());
+        }
+        // añadir eventos a tarjetas de vehiculo
+        for (Component comp : ventana.panelVehiculos.panelContenido.getComponents()) {
+            if (comp instanceof PanelItemVehiculo panelItemVehiculo) {
+                panelItemVehiculo.bBorrar.addActionListener(this);
+                panelItemVehiculo.bEditar.addActionListener(this);
+            }
+        }
+    }    
 }
