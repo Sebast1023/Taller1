@@ -36,9 +36,10 @@ public class Vehiculo {
     private String tipoVehiculo; // nuevo atributo
     private String placa;
     private Usuario usuario;
+    private String Imagen;
 
     public Vehiculo(String marca, String modelo, String ano, String potencia, 
-                    String color, String tipoVehiculo, String placa, Usuario usuario) {
+                    String color, String tipoVehiculo, String placa, Usuario usuario, String imagen) {
         this.marca = marca;
         this.modelo = modelo;
         this.ano = ano;
@@ -109,5 +110,10 @@ public class Vehiculo {
     public Usuario getUsuario() {
         return usuario;
     }
+
+    public String getImagen() {
+        return Imagen;
+    }
+    
 }
 

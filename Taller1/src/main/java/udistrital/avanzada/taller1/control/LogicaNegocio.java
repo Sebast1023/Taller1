@@ -1,9 +1,11 @@
 package udistrital.avanzada.taller1.control;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import udistrital.avanzada.taller1.modelo.Persona;
 import udistrital.avanzada.taller1.modelo.Usuario;
 import udistrital.avanzada.taller1.modelo.Administrador;
+import udistrital.avanzada.taller1.modelo.Vehiculo;
 
 /**
  * Clase que centraliza la lógica de negocio del sistema.
@@ -42,13 +44,16 @@ public class LogicaNegocio {
     private ControlVentana gVentana;
     private ControlPersona controlPersona;
     private ControlAdministrador controlAdministrador;
+    private ControlUsuario controlUsuario;
 
     // Mensaje del último intento de login (para mostrar en la vista)
     private String ultimoMensajeLogin;
+    private Persona usuarioLogeado;
 
     public LogicaNegocio() {
         controlPersona = new ControlPersona();
         controlAdministrador = new ControlAdministrador();
+        controlUsuario = new ControlUsuario();
         gVentana = new ControlVentana(this);
 
         crearAdministradorPorDefecto();
@@ -84,6 +89,7 @@ public class LogicaNegocio {
                 return null;
             }
         }
+        usuarioLogeado = persona;
 
         // Login exitoso
         ultimoMensajeLogin = null;
@@ -122,6 +128,13 @@ public class LogicaNegocio {
         } else {
             System.out.println("ℹ️ El administrador predeterminado ya existe.");
         }
+    }
+
+    public ArrayList<Vehiculo> getVehiculosUsuario() {
+        if(usuarioLogeado instanceof Usuario usuario){
+            return controlUsuario.getVehiculos(usuario);
+        }
+        return null;
     }
 }
 

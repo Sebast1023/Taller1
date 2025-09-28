@@ -4,8 +4,10 @@ import java.awt.Component;
 import udistrital.avanzada.taller1.vista.Ventana;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import udistrital.avanzada.taller1.modelo.Persona;
 import udistrital.avanzada.taller1.modelo.Usuario;
+import udistrital.avanzada.taller1.modelo.Vehiculo;
 import udistrital.avanzada.taller1.vista.PanelItemVehiculo;
 
 /**
@@ -106,13 +108,7 @@ public class ControlVentana implements ActionListener {
         ventana.panelMenu.bSalir.addActionListener(this);
         ventana.panelMenu.bVehiculos.addActionListener(this);
         ventana.panelVehiculo.bAtras.addActionListener(this);
-        // eventos a tarjetas de vehiculo
-        for (Component comp : ventana.panelVehiculos.panelContenido.getComponents()) {
-            if (comp instanceof PanelItemVehiculo panelItemVehiculo) {
-                panelItemVehiculo.bBorrar.addActionListener(this);
-                panelItemVehiculo.bEditar.addActionListener(this);
-            }
-        }
+        
         
         ventana.setVisible(true);
     }
@@ -287,6 +283,7 @@ public class ControlVentana implements ActionListener {
 
             case "Vehiculos":
                 ventana.mostrarPanel("PANEL_VEHICULOS_USUARIO");
+                mostrarPanelVehiculosUsuario();
                 break;
             case "Vehiculo":
                 ventana.mostrarPanel("VEHICULO_PANEL");
@@ -318,4 +315,19 @@ public class ControlVentana implements ActionListener {
              
         }
     }
+    public void mostrarPanelVehiculosUsuario() {
+        ArrayList<Vehiculo> vehiculos = logica.getVehiculosUsuario();
+        if(vehiculos == null){return;}        
+        ventana.mostrarPanel("PANEL_VEHICULOS_USUARIO");        
+        for (Vehiculo vehiculo : vehiculos) {
+            ventana.panelVehiculos.mostrarVehiculoEnLista(vehiculo.getMarca(), vehiculo.getModelo(), vehiculo.getAno(), vehiculo.getPotencia(), vehiculo.getColor(), vehiculo.getTipoVehiculo(), vehiculo.getPlaca(), vehiculo.getImagen());
+        }
+        // añadir eventos a tarjetas de vehiculo
+        for (Component comp : ventana.panelVehiculos.panelContenido.getComponents()) {
+            if (comp instanceof PanelItemVehiculo panelItemVehiculo) {
+                panelItemVehiculo.bBorrar.addActionListener(this);
+                panelItemVehiculo.bEditar.addActionListener(this);
+            }
+        }
+    }    
 }

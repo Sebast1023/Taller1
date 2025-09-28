@@ -1,6 +1,8 @@
 package udistrital.avanzada.taller1.control;
 
 import java.util.ArrayList;
+import udistrital.avanzada.taller1.modelo.Moto;
+import udistrital.avanzada.taller1.modelo.Scooter;
 import udistrital.avanzada.taller1.modelo.Usuario;
 import udistrital.avanzada.taller1.modelo.Vehiculo;
 
@@ -52,11 +54,21 @@ public class ControlVehiculo {
      * @param placa placa única (no se puede repetir)
      * @param usuario usuario propietario del vehículo
      */
-    public void crearVehiculo(String marca, String modelo, String ano, String potencia, 
+    public void crearVehiculoScooter(String marca, String modelo, String ano, String potencia, 
                               String color, String tipoVehiculo, String placa, Usuario usuario) {
         // Validamos que no exista ya un vehículo con la misma placa
-        if (buscarVehiculo(placa) == null) {
-            Vehiculo vehiculo = new Vehiculo(marca, modelo, ano, potencia, color, tipoVehiculo, placa, usuario);
+        if (buscarVehiculo(placa) == null) {            
+            Vehiculo vehiculo = new Scooter(marca, modelo, ano, potencia, color, tipoVehiculo, placa, usuario);
+            vehiculos.add(vehiculo);
+        } else {
+            System.out.println("Error: ya existe un vehículo con la placa " + placa);
+        }
+    }
+    public void crearVehiculoMoto(String marca, String modelo, String ano, String potencia, 
+                              String color, String tipoVehiculo, String placa, Usuario usuario) {
+        // Validamos que no exista ya un vehículo con la misma placa
+        if (buscarVehiculo(placa) == null) {            
+            Vehiculo vehiculo = new Moto(marca, modelo, ano, potencia, color, tipoVehiculo, placa, usuario);
             vehiculos.add(vehiculo);
         } else {
             System.out.println("Error: ya existe un vehículo con la placa " + placa);
