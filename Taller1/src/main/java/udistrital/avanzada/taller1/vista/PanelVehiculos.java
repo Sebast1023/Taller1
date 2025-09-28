@@ -102,7 +102,7 @@ public class PanelVehiculos extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         scrollListaVehiculos = new javax.swing.JScrollPane();
         panelContenido = new javax.swing.JPanel();
-        bCrearInsumo = new javax.swing.JButton();
+        bBuscarVehiculos = new javax.swing.JButton();
 
         jLabel1.setText("Mis Vehiculos");
 
@@ -119,11 +119,11 @@ public class PanelVehiculos extends javax.swing.JPanel {
 
         scrollListaVehiculos.setViewportView(panelContenido);
 
-        bCrearInsumo.setText("buscar");
-        bCrearInsumo.setActionCommand("ActualizarListaVehiculosUsuario");
-        bCrearInsumo.addActionListener(new java.awt.event.ActionListener() {
+        bBuscarVehiculos.setText("buscar");
+        bBuscarVehiculos.setActionCommand("ActualizarListaVehiculosUsuario");
+        bBuscarVehiculos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bCrearInsumoActionPerformed(evt);
+                bBuscarVehiculosActionPerformed(evt);
             }
         });
 
@@ -137,7 +137,7 @@ public class PanelVehiculos extends javax.swing.JPanel {
                         .addGap(152, 152, 152)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(bCrearInsumo))
+                        .addComponent(bBuscarVehiculos))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addComponent(scrollListaVehiculos, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -149,20 +149,20 @@ public class PanelVehiculos extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bCrearInsumo))
+                    .addComponent(bBuscarVehiculos))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(scrollListaVehiculos, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(21, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bCrearInsumoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCrearInsumoActionPerformed
+    private void bBuscarVehiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBuscarVehiculosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bCrearInsumoActionPerformed
+    }//GEN-LAST:event_bBuscarVehiculosActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton bCrearInsumo;
+    public javax.swing.JButton bBuscarVehiculos;
     private javax.swing.JLabel jLabel1;
     public javax.swing.JPanel panelContenido;
     private javax.swing.JScrollPane scrollListaVehiculos;

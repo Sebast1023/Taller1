@@ -109,19 +109,10 @@ public class ControlVentana implements ActionListener {
         ventana.panelMenu.bVehiculos.addActionListener(this);
         ventana.panelVehiculo.bAtras.addActionListener(this);
         ventana.panelRegistro.bAtras.addActionListener(this);
-        ventana.panelVehiculo.bAtras.addActionListener(this);
+        ventana.panelVehiculos.bBuscarVehiculos.addActionListener(this);
         ventana.panelServicio.bAtras.addActionListener(this);
         ventana.panelAceptar.bCerrarSesion.addActionListener(this);
-        ventana.panelAdmin.bAtras.addActionListener(this);
-        // eventos a tarjetas de vehiculo
-        for (Component comp : ventana.panelVehiculos.panelContenido.getComponents()) {
-            if (comp instanceof PanelItemVehiculo panelItemVehiculo) {
-                panelItemVehiculo.bBorrar.addActionListener(this);
-                panelItemVehiculo.bEditar.addActionListener(this);
-            }
-        }
-        
-        
+        ventana.panelAdmin.bAtras.addActionListener(this);        
         ventana.setVisible(true);
     }
 
