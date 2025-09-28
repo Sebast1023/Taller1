@@ -18,8 +18,9 @@ import udistrital.avanzada.taller1.modelo.Administrador;
  * </p>
  *
  * @author Diego
+ * @author sebas
  * @version 1.6
- * @date 27/09/2025
+ * @date 23/09/2025
  */
 
 /* 

@@ -6,7 +6,8 @@ package udistrital.avanzada.taller1.vista;
 
 /**
  *
- * @author user
+ * @author sebas
+ * @author 24/09/2025
  */
 public class PanelRegistro extends javax.swing.JPanel {
 

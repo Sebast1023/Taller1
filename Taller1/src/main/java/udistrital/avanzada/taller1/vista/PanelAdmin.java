@@ -6,7 +6,8 @@ package udistrital.avanzada.taller1.vista;
 
 /**
  *
- * @author user
+ * @author sebas
+ * @date 27/09/2025
  */
 public class PanelAdmin extends javax.swing.JPanel {
 

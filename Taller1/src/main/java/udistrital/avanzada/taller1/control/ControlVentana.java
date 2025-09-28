@@ -16,8 +16,9 @@ import udistrital.avanzada.taller1.modelo.Usuario;
  * registro de usuarios.
  *
  * @author Diego
+ * @author sebas
  * @version 1.2
- * @date 27/09/2025
+ * @date 23/09/2025
  */
 
 /* Fecha de Modificación: 27/09/2025

@@ -6,7 +6,8 @@ package udistrital.avanzada.taller1.vista;
 
 /**
  *
- * @author user
+ * @author sebas
+ * @date 26/09/2025
  */
 public class PanelMenu extends javax.swing.JPanel {
 
