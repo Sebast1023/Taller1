@@ -7,7 +7,7 @@ package udistrital.avanzada.taller1.modelo;
 import java.time.LocalDate;
 
 /**
- * @author mauricio
+ * author mauricio
  * 24/09/2025
  * Clase Item es superclase para Producto y Servicio que pueden
  * crear los proveedores

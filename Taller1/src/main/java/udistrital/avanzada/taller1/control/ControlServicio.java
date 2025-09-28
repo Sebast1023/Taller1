@@ -9,7 +9,7 @@ import udistrital.avanzada.taller1.modelo.Servicio;
 
 /**
  *
- * @author mauri
+ * author mauri
  */
 public class ControlServicio {
     /**

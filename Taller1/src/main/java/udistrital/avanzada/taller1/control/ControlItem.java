@@ -13,7 +13,7 @@ import udistrital.avanzada.taller1.modelo.Servicio;
 
 /**
  *
- * @author mauricio
+ * author mauricio
  * Clase encarga del manejo de los objetos tipo Item
  */
 public class ControlItem {

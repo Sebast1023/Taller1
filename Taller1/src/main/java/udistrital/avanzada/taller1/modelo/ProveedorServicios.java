@@ -3,8 +3,8 @@ package udistrital.avanzada.taller1.modelo;
 import java.util.ArrayList;
 
 /**
- * @author mauricio 
- * @date 23/09/2025
+ * author mauricio 
+ * date 23/09/2025
  * 
  * Clase ProveedorServicios representa a un proveedor que ofrece servicios dentro del sistema.
  * Hereda de la clase Proveedor e incluye una lista de servicios asociados.

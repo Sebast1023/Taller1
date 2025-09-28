@@ -9,8 +9,8 @@ package udistrital.avanzada.taller1.control;
  * 
  * Normalmente se usa como clase ejecutable para arrancar el programa.
  * 
- * @author sebas
- * @date 23/09/2025
+ * author sebas
+ * date 23/09/2025
  */
 
 public class Launcher {

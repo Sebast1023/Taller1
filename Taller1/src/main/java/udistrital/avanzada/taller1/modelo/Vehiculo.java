@@ -12,9 +12,9 @@ package udistrital.avanzada.taller1.modelo;
  * no existan dos vehículos registrados con la misma matrícula.
  * </p>
  * 
- * @author Diego
- * @version 1.0
- * @date 26/09/2025
+ * author Diego
+ * version 1.0
+ * date 26/09/2025
  */
 
 /* Fecha de Modificación: 26/09/2025

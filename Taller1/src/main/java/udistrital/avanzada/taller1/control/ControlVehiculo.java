@@ -19,9 +19,9 @@ import udistrital.avanzada.taller1.modelo.Vehiculo;
  * los propietarios representados por la clase {@link Usuario}.
  * </p>
  * 
- * @author Diego
- * @version 1.2
- * @date 27/09/2025
+ * author Diego
+ * version 1.2
+ * date 27/09/2025
  */
 
 /* Fecha de Modificación: 27/09/2025

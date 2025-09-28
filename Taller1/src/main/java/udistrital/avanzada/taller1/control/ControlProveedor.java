@@ -15,9 +15,9 @@ import udistrital.avanzada.taller1.modelo.Publicacion;
  * Esta clase sigue el patrón MVC y mantiene la separación de responsabilidades,
  * centralizando la gestión de proveedores en un único lugar.
  * 
- * @author Diego
- * @version 1.0
- * @date 27/09/2025
+ * author Diego
+ * version 1.0
+ * date 27/09/2025
  */
 public class ControlProveedor {
 

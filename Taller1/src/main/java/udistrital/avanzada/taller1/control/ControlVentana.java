@@ -19,10 +19,10 @@ import udistrital.avanzada.taller1.vista.PanelItemVehiculo;
  * comunicarse con la capa lógica para operaciones como el inicio de sesión o el
  * registro de usuarios.
  *
- * @author Diego
- * @author sebas
- * @version 1.2
- * @date 23/09/2025
+ * author Diego
+ * author sebas
+ * version 1.2
+ * date 23/09/2025
  */
 
 /* Fecha de Modificación: 27/09/2025
@@ -108,6 +108,18 @@ public class ControlVentana implements ActionListener {
         ventana.panelMenu.bSalir.addActionListener(this);
         ventana.panelMenu.bVehiculos.addActionListener(this);
         ventana.panelVehiculo.bAtras.addActionListener(this);
+        ventana.panelRegistro.bAtras.addActionListener(this);
+        ventana.panelVehiculo.bAtras.addActionListener(this);
+        ventana.panelServicio.bAtras.addActionListener(this);
+        ventana.panelAceptar.bCerrarSesion.addActionListener(this);
+        ventana.panelAdmin.bAtras.addActionListener(this);
+        // eventos a tarjetas de vehiculo
+        for (Component comp : ventana.panelVehiculos.panelContenido.getComponents()) {
+            if (comp instanceof PanelItemVehiculo panelItemVehiculo) {
+                panelItemVehiculo.bBorrar.addActionListener(this);
+                panelItemVehiculo.bEditar.addActionListener(this);
+            }
+        }
         
         
         ventana.setVisible(true);
@@ -312,7 +324,21 @@ public class ControlVentana implements ActionListener {
             case "EditarVehiculo":
                 String vehiculoAEditar = comandosubespecializado[1];                
                 break;
-             
+            case "AtrasRegistro":
+                ventana.mostrarPanel("LOGIN_PANEL");
+                break;
+            case "AtrasVehiculo":
+                ventana.mostrarPanel("MENU_PANEL");
+                break;
+            case "AtrasServicio":
+                ventana.mostrarPanel("MENU_PANEL");
+                break;
+            case "CerrarSesion":
+                ventana.mostrarPanel("LOGIN_PANEL");
+                break;
+            case "AtrasAdmin":
+                ventana.mostrarPanel("ACEPTAR_USUARIOS");
+                break;
         }
     }
     public void mostrarPanelVehiculosUsuario() {

@@ -15,9 +15,9 @@ import udistrital.avanzada.taller1.modelo.Publicacion;
  * los administradores registrados. También permite registrar proveedores y validar usuarios.
  * </p>
  * 
- * @author Diego
- * @version 1.0
- * @date 27/09/2025
+ * author Diego
+ * version 1.0
+ * date 27/09/2025
  */
 public class ControlAdministrador {
 

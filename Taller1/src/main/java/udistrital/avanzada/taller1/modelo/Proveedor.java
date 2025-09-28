@@ -3,7 +3,7 @@ package udistrital.avanzada.taller1.modelo;
 import java.util.ArrayList;
 
 /**
- * @author mauricio
+ * author mauricio
  * 23/9/2025
  * Super clase de Proveedores tipo insumo y tipo servicio
  * Implementa la interfaz publicador para que los proveedore manejen

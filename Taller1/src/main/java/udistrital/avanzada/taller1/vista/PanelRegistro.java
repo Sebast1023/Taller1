@@ -6,8 +6,8 @@ package udistrital.avanzada.taller1.vista;
 
 /**
  *
- * @author sebas
- * @author 24/09/2025
+ * author sebas
+ * author 24/09/2025
  */
 public class PanelRegistro extends javax.swing.JPanel {
 
@@ -79,7 +79,7 @@ public class PanelRegistro extends javax.swing.JPanel {
         lMembresia.setText("Membresia:");
 
         bAtras.setText("Atras");
-        bAtras.setActionCommand("Atras");
+        bAtras.setActionCommand("AtrasRegistro");
         bAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bAtrasActionPerformed(evt);

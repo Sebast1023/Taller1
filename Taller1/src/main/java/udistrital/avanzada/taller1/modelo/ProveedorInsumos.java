@@ -9,9 +9,9 @@ import java.util.ArrayList;
  * Hereda de la clase Proveedor e incorpora una lista de insumos que el
  * proveedor ofrece. Cada insumo se modela como un objeto de la clase Insumo.
  * 
- * @author mauricio
- * @version 1.0
- * @date 23/09/2025
+ * author mauricio
+ * version 1.0
+ * date 23/09/2025
  * 
  * Fecha de Modificación: 27/09/2025  
  * Modificado por: Diego  

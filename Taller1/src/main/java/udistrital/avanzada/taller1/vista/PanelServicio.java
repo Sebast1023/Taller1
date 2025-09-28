@@ -6,7 +6,7 @@ package udistrital.avanzada.taller1.vista;
 
 /**
  *
- * @author mauri
+ * author mauri
  */
 public class PanelServicio extends javax.swing.JPanel {
 
@@ -130,7 +130,7 @@ public class PanelServicio extends javax.swing.JPanel {
         );
 
         bAtras.setText("Atras");
-        bAtras.setActionCommand("Atras");
+        bAtras.setActionCommand("AtrasServicio");
 
         bCrearInsumo.setText("Crear");
         bCrearInsumo.setActionCommand("CrearInsumo");

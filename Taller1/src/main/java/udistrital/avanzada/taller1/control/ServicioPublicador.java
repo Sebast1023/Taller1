@@ -11,7 +11,7 @@ import udistrital.avanzada.taller1.modelo.Publicacion;
 
 /**
  *
- * @author mauri
+ * author mauri
  */
 public class ServicioPublicador {
     /**

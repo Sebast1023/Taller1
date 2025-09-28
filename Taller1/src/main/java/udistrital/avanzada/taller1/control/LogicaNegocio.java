@@ -19,10 +19,9 @@ import udistrital.avanzada.taller1.modelo.Vehiculo;
  * sesión y creación de un administrador predeterminado.
  * </p>
  *
- * @author Diego
- * @author sebas
- * @version 1.6
- * @date 23/09/2025
+ * author sebas
+ * version 1.6
+ * date 23/09/2025
  */
 
 /* 

@@ -13,9 +13,9 @@ package udistrital.avanzada.taller1.modelo;
  * y tipo de vehículo.
  * </p>
  * 
- * @author Mauricio
- * @version 1.2
- * @date 27/09/2025
+ * author Mauricio
+ * version 1.2
+ * date 27/09/2025
  */
 
 /* Fecha de Modificación: 27/09/2025
